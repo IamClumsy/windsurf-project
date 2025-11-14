@@ -177,18 +177,18 @@ function App() {
       </div>
 
       {/* Main Content */}
-      <main className="mx-auto w-fit bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-2xl text-white shadow-2xl border border-amber-500/20 backdrop-blur-sm">
+      <main className="mx-auto w-fit bg-gradient-to-br from-violet-700/80 via-fuchsia-700/75 to-pink-600/80 rounded-2xl text-white shadow-[0_0_25px_rgba(219,39,119,0.4)] border border-pink-400/40 backdrop-blur-md ring-1 ring-fuchsia-400/30">
         <div className="overflow-x-auto">
           <table className="mx-auto table-auto table-force-white table-with-spacing italic">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               {/* Filter row */}
-              <tr className="align-middle">
+              <tr className="align-middle bg-gradient-to-r from-violet-800/70 via-fuchsia-800/70 to-pink-700/70">
                 <th className="px-4 py-2"></th>
                 <th className="px-4 py-2">
                   <select
                     value={selectedGenre}
                     onChange={(e) => setSelectedGenre(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Genre</option>
                     {genres.map(genre => (
@@ -200,7 +200,7 @@ function App() {
                   <select
                     value={selectedRole}
                     onChange={(e) => setSelectedRole(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Role</option>
                     {roles.map(role => (
@@ -212,7 +212,7 @@ function App() {
                   <select
                     value={selectedRank}
                     onChange={(e) => setSelectedRank(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Rank</option>
                     {rankOptions.map(rank => (
@@ -224,7 +224,7 @@ function App() {
                   <select
                     value={selectedSkill}
                     onChange={(e) => setSelectedSkill(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Skill 2</option>
                     {skills.map(skill => (
@@ -236,7 +236,7 @@ function App() {
                   <select
                     value={selectedSkill3}
                     onChange={(e) => setSelectedSkill3(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Skill 3</option>
                     {skills.map(skill => (
@@ -248,7 +248,7 @@ function App() {
                   <select
                     value={selectedThoughts}
                     onChange={(e) => setSelectedThoughts(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Thoughts</option>
                     {thoughtsOptions.map(thought => (
@@ -260,7 +260,7 @@ function App() {
                   <select
                     value={selectedBuild}
                     onChange={(e) => setSelectedBuild(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Build</option>
                     {buildOptions.map(build => (
@@ -271,14 +271,14 @@ function App() {
               </tr>
               {/* Column header row */}
               <tr>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Artist</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Genre</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Role</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Rank</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill 2</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill 3</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Mick's Thoughts</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill Based Build</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Artist</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Genre</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Role</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Rank</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 2</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Mick's Thoughts</th>
+                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill Based Build</th>
               </tr>
             </thead>
             <tbody className="bg-gray-800/80">
@@ -336,9 +336,9 @@ function App() {
                               '12% Skill Damage Reduction'
                             ].includes(artist.skills[1].trim())
                               ? artist.skills[1].trim() === '20% Skill Damage' || artist.skills[1].trim() === '50% Basic Attack Damage'
-                                ? 'bg-gradient-to-r from-green-600/30 to-emerald-600/30 text-green-100 border border-green-400/50 text-green-400 font-bold'
-                                : 'bg-gradient-to-r from-green-600/30 to-emerald-600/30 text-green-100 border border-green-400/50'
-                              : 'bg-gray-700/70 text-white/90 border border-gray-500/30'
+                                ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
+                                : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
+                              : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
                           }`}
                         >
                           {artist.skills[1]}
@@ -360,9 +360,9 @@ function App() {
                               '12% Skill Damage Reduction'
                             ].includes(artist.skills[2].trim())
                               ? artist.skills[2].trim() === '20% Skill Damage' || artist.skills[2].trim() === '50% Basic Attack Damage'
-                                ? 'bg-gradient-to-r from-green-600/30 to-emerald-600/30 text-green-100 border border-green-400/50 text-green-400 font-bold'
-                                : 'bg-gradient-to-r from-green-600/30 to-emerald-600/30 text-green-100 border border-green-400/50'
-                              : 'bg-gray-700/70 text-white/90 border border-gray-500/30'
+                                ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
+                                : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
+                              : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
                           }`}
                         >
                           {artist.skills[2]}
@@ -374,19 +374,19 @@ function App() {
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                      artist.thoughts === 'Yes' ? 'bg-green-600/30 text-green-100' :
-                      artist.thoughts === 'No' ? 'bg-red-600/30 text-red-100' :
-                      artist.thoughts === 'If Nothing Better' ? 'bg-yellow-600/30 text-yellow-100' :
-                      artist.thoughts === 'Bad' ? 'bg-red-700/40 text-red-100' :
-                      'bg-gray-700/70 text-white/80'
+                      artist.thoughts === 'Yes' ? 'bg-gradient-to-r from-green-400 to-emerald-600 text-white shadow-sm' :
+                      artist.thoughts === 'No' ? 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-sm' :
+                      artist.thoughts === 'If Nothing Better' ? 'bg-gradient-to-r from-amber-400 to-yellow-500 text-white shadow-sm' :
+                      artist.thoughts === 'Bad' ? 'bg-gradient-to-r from-rose-700 to-red-800 text-white shadow-sm' :
+                      'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100'
                     }`}>
                       {artist.thoughts || 'N/A'}
                     </span>
                   </td>
                   <td className="px-4 py-4 text-center">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                      artist.build === 'Skill Build' ? 'bg-blue-600/30 text-blue-100' :
-                      'bg-purple-600/30 text-purple-100'
+                      artist.build === 'Skill Build' ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-sm' :
+                      'bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white shadow-sm'
                     }`}>
                       {artist.build || 'N/A'}
                     </span>

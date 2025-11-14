@@ -31,9 +31,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  /* More vibrant multi-stop gradient */
+  background: linear-gradient(135deg, #0d0b33 0%, #342e79 30%, #6d28d9 55%, #a21caf 75%, #db2777 100%);
   background-attachment: fixed;
   padding: 0;
+  position: relative;
+}
+
+/* Soft radial glow overlay for extra vibrancy */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255,0,128,0.10), transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06), transparent 70%);
+  mix-blend-mode: overlay;
 }
 
 /* Smooth scrolling */
