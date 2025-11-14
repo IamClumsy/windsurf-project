@@ -269,7 +269,7 @@ function App() {
       {/* Main Content */}
       <main className="w-full max-w-7xl mx-auto px-4 bg-gray-800/80 rounded-lg text-white">
         <div className="w-full overflow-x-auto">
-            <table className="min-w-full divide-y divide-amber-400/30 text-white">
+            <table className="min-w-full divide-y divide-amber-400/30 table-force-white">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               <tr className="divide-x divide-amber-400/20">
                 <th className="px-3 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider w-[12ch] min-w-[12ch] max-w-[12ch]">

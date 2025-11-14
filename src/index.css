@@ -82,3 +82,9 @@ html {
 .btn-outline {
   @apply border border-gray-300 hover:bg-gray-50 focus:ring-gray-500;
 }
+
+/* Force all text inside tables with this class to be white (overrides utility classes) */
+.table-force-white,
+.table-force-white * {
+  color: #fff !important;
+}
