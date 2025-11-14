@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf node_modules/.vite && npm install && npm install -g typescript && npm install -D typescript@latest vite@latest @vitejs/plugin-react@latest @types/react @types/react-dom @types/node && npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
 
 [build.environment]
