@@ -1,5 +1,5 @@
 [build]
-  command = "npm ci && npm run build"
+  command = "npm install -g typescript@5.9.3 && npm install && npm run build"
   publish = "dist"
 
 [build.environment]
