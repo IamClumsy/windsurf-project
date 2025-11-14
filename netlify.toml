@@ -1,16 +1,10 @@
 [build]
-  command = "npm install -g typescript && npm install && npm run build"
+  command = "npm run build"
   publish = "dist"
-  functions = "netlify/functions"
 
 [build.environment]
-  NODE_VERSION = "20.19.0"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NODE_VERSION = "20"
   NODE_ENV = "production"
-  NPM_VERSION = "latest"
-  VITE_NETLIFY = "true"
-  NPM_CONFIG_PREFIX = "$NETLIFY_BUILD_BASE/.npm-global"
-  PATH = "$NETLIFY_BUILD_BASE/.npm-global/bin:$PATH"
 
 [dev]
   command = "npm run dev"

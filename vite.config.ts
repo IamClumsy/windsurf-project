@@ -1,12 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { mkdirSync, existsSync } from 'fs';
-
-// Create netlify/functions directory if it doesn't exist
-if (!existsSync('netlify/functions')) {
-  mkdirSync('netlify/functions', { recursive: true });
-}
 
 export default defineConfig({
   plugins: [react()],
