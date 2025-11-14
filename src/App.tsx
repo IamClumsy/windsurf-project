@@ -387,6 +387,7 @@ function App() {
       <footer className="w-full max-w-7xl mt-8 py-4 text-center text-white text-sm">
         <p>© {new Date().getFullYear()} JustMick's Artist Helper</p>
       </footer>
+      </div>
     </div>
   );
 }
