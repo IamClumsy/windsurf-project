@@ -78,24 +78,51 @@
       <div>
         <label class="block text-sm font-medium text-gray-700">Skills</label>
         <div class="grid grid-cols-3 gap-2 mt-1">
-          <select
-            id="skill1"
-            class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          >
-            <option value="">Skill 1</option>
-          </select>
-          <select
-            id="skill2"
-            class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          >
-            <option value="">Skill 2</option>
-          </select>
-          <select
-            id="skill3"
-            class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
-          >
-            <option value="">Skill 3</option>
-          </select>
+          <div>
+            <select
+              id="skill1"
+              class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">Skill 1</option>
+              <option value="__custom__">Custom Skill</option>
+            </select>
+            <input
+              id="skill1Custom"
+              type="text"
+              class="hidden mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              placeholder="Enter custom skill"
+            />
+          </div>
+          <div>
+            <select
+              id="skill2"
+              class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">Skill 2</option>
+              <option value="__custom__">Custom Skill</option>
+            </select>
+            <input
+              id="skill2Custom"
+              type="text"
+              class="hidden mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              placeholder="Enter custom skill"
+            />
+          </div>
+          <div>
+            <select
+              id="skill3"
+              class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="">Skill 3</option>
+              <option value="__custom__">Custom Skill</option>
+            </select>
+            <input
+              id="skill3Custom"
+              type="text"
+              class="hidden mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              placeholder="Enter custom skill"
+            />
+          </div>
         </div>
       </div>
       
@@ -166,6 +193,21 @@
           select.appendChild(opt);
         });
       });
+      
+      // Add event listeners for custom skill visibility
+      ['skill1', 'skill2', 'skill3'].forEach(skillId => {
+        const select = document.getElementById(skillId);
+        const customInput = document.getElementById(skillId + 'Custom');
+        
+        select.addEventListener('change', () => {
+          if (select.value === '__custom__') {
+            customInput.classList.remove('hidden');
+          } else {
+            customInput.classList.add('hidden');
+            customInput.value = '';
+          }
+        });
+      });
     }
     
     // Close button
@@ -181,9 +223,17 @@
     document.getElementById('addArtistForm').addEventListener('submit', (e) => {
       e.preventDefault();
       
-      const skill1 = document.getElementById('skill1').value;
-      const skill2 = document.getElementById('skill2').value;
-      const skill3 = document.getElementById('skill3').value;
+      const getSkillValue = (skillId) => {
+        const select = document.getElementById(skillId);
+        if (select.value === '__custom__') {
+          return document.getElementById(skillId + 'Custom').value;
+        }
+        return select.value;
+      };
+      
+      const skill1 = getSkillValue('skill1');
+      const skill2 = getSkillValue('skill2');
+      const skill3 = getSkillValue('skill3');
       
       const newArtist = {
         id: openerData.nextId || 1,
