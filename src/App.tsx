@@ -142,10 +142,9 @@ function App() {
     <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center">
       <div className="w-full flex flex-col items-center py-8 text-white gap-8">
       
-      <div className="flex flex-col items-center gap-8 w-full max-w-md mx-auto px-4">
       {/* Page Title */}
       <header className="flex flex-col items-center gap-4 app-header">
-        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg tracking-tight" style={{ color: '#ffffff' }}>JustMick's Awesome Artist Helper</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg tracking-tight text-center" style={{ color: '#ffffff' }}>JustMick's Awesome Artist Helper</h1>
         <button
           type="button"
           onClick={() => {
@@ -165,96 +164,28 @@ function App() {
         </button>
       </header>
       
-      {/* Search and Filters */}
-      <div className="flex flex-col items-center gap-4 w-full">
+      {/* Search & Group Filter */}
+      <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto px-4">
         <div className="relative w-full">
-            <input
-              type="text"
-              placeholder="Search artists..."
-              className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <FaSearch className="absolute right-3 top-3 text-gray-400" />
-          </div>
-          
-          <select
-            value={selectedGroup}
-            onChange={(e) => setSelectedGroup(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Group</option>
-            {groupOptions.map(group => (
-              <option key={group} value={group}>{group}</option>
-            ))}
-          </select>
-          
-          <select
-            value={selectedRank}
-            onChange={(e) => setSelectedRank(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Rank</option>
-            {rankOptions.map(rank => (
-              <option key={rank} value={rank}>{rank}</option>
-            ))}
-          </select>
-          
-          <select
-            value={selectedRole}
-            onChange={(e) => setSelectedRole(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Role</option>
-            {roles.map(role => (
-              <option key={role} value={role}>{role}</option>
-            ))}
-          </select>
-          
-          <select
-            value={selectedGenre}
-            onChange={(e) => setSelectedGenre(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Genre</option>
-            {genres.map(genre => (
-              <option key={genre} value={genre}>{genre}</option>
-            ))}
-          </select>
-          
-          <select
-            value={selectedSkill}
-            onChange={(e) => setSelectedSkill(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Skill</option>
-            {skills.map(skill => (
-              <option key={skill} value={skill}>{skill || 'No Skill'}</option>
-            ))}
-          </select>
-
-          <select
-            value={selectedThoughts}
-            onChange={(e) => setSelectedThoughts(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Thoughts</option>
-            {thoughtsOptions.map(thought => (
-              <option key={thought} value={thought}>{thought}</option>
-            ))}
-          </select>
-
-          <select
-            value={selectedBuild}
-            onChange={(e) => setSelectedBuild(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
-          >
-            <option value="">Select Build</option>
-            {buildOptions.map(build => (
-              <option key={build} value={build}>{build}</option>
-            ))}
-          </select>
+          <input
+            type="text"
+            placeholder="Search artists..."
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 text-center"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <FaSearch className="absolute right-3 top-3 text-gray-400" />
         </div>
+        <select
+          value={selectedGroup}
+          onChange={(e) => setSelectedGroup(e.target.value)}
+          className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60 text-center"
+        >
+          <option value="">Select Group</option>
+          {groupOptions.map(group => (
+            <option key={group} value={group}>{group}</option>
+          ))}
+        </select>
       </div>
 
       {/* Main Content */}
@@ -264,21 +195,81 @@ function App() {
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               <tr>
                 <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
-                  <div className="truncate" title="Artist">Artist</div>
+                  Artist
                 </th>
                 <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
-                  <div className="truncate" title="Genre">Genre</div>
+                  <select
+                    value={selectedGenre}
+                    onChange={(e) => setSelectedGenre(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Genre</option>
+                    {genres.map(genre => (
+                      <option key={genre} value={genre}>{genre}</option>
+                    ))}
+                  </select>
                 </th>
                 <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
-                  <div className="truncate" title="Role">Role</div>
+                  <select
+                    value={selectedRole}
+                    onChange={(e) => setSelectedRole(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Role</option>
+                    {roles.map(role => (
+                      <option key={role} value={role}>{role}</option>
+                    ))}
+                  </select>
                 </th>
                 <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
-                  <div className="truncate" title="Rank">Rank</div>
+                  <select
+                    value={selectedRank}
+                    onChange={(e) => setSelectedRank(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Rank</option>
+                    {rankOptions.map(rank => (
+                      <option key={rank} value={rank}>{rank}</option>
+                    ))}
+                  </select>
                 </th>
-                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill 2</th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
+                  <select
+                    value={selectedSkill}
+                    onChange={(e) => setSelectedSkill(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Skill 2</option>
+                    {skills.map(skill => (
+                      <option key={skill} value={skill}>{skill || 'No Skill'}</option>
+                    ))}
+                  </select>
+                </th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill 3</th>
-                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Mick's Thoughts</th>
-                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill Based Build</th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
+                  <select
+                    value={selectedThoughts}
+                    onChange={(e) => setSelectedThoughts(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Thoughts</option>
+                    {thoughtsOptions.map(thought => (
+                      <option key={thought} value={thought}>{thought}</option>
+                    ))}
+                  </select>
+                </th>
+                <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
+                  <select
+                    value={selectedBuild}
+                    onChange={(e) => setSelectedBuild(e.target.value)}
+                    className="w-full px-2 py-1 rounded-lg bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Build</option>
+                    {buildOptions.map(build => (
+                      <option key={build} value={build}>{build}</option>
+                    ))}
+                  </select>
+                </th>
               </tr>
             </thead>
             <tbody className="bg-gray-800/80">
