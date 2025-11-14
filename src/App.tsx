@@ -171,7 +171,7 @@ function App() {
           <FaMusic size={24} />
         </button>
       </header>
-      <div className="max-w-[95vw] mx-auto flex flex-col items-center py-8 text-white">
+      <div className="w-full flex justify-center py-8 text-white">
       {/* Header */}
       <header className="w-full max-w-7xl mb-8 text-center">
         
