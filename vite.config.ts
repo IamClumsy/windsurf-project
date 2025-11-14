@@ -1,34 +1,52 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
   build: {
-    // Ensure consistent file hashing
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
     rollupOptions: {
       output: {
-        entryFileNames: `assets/[name].[hash].js`,
-        chunkFileNames: `assets/[name].[hash].js`,
-        assetFileNames: `assets/[name].[hash].[ext]`
-      }
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash][extname]',
+      },
     },
-    // Ensure CSS is extracted consistently
-    cssCodeSplit: true,
-    // Minify for production
     minify: 'terser',
-    // Generate sourcemaps for better debugging
-    sourcemap: true
+    sourcemap: true,
+    cssCodeSplit: true,
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1600,
   },
-  // Ensure consistent base URL
-  base: '/',
-  // Configure development server
   server: {
     port: 5173,
-    strictPort: true
+    strictPort: true,
+    open: true,
+    cors: true,
   },
-  // Configure preview server
   preview: {
     port: 5173,
-    strictPort: true
-  }
+    strictPort: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
+    esbuildOptions: {
+      // Node.js global to browser globalThis
+      define: {
+        global: 'globalThis',
+      },
+    },
+  },
+  define: {
+    'process.env': {},
+  },
+  base: '/',
 });
