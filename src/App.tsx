@@ -102,8 +102,8 @@ function App() {
   const genres = [...new Set(artists.map(artist => artist.genre))];
   const allSkills = [...new Set(artists.flatMap(artist => artist.skills).filter(Boolean))];
   const skills = allSkills; // Alias for backward compatibility
-  const thoughtsOptions = ['Yes', 'No', 'If Nothing Better', 'Bad'];
-  const buildOptions = ['Skill Build', 'Standard Build'];
+  const thoughtsOptions = [...new Set(artists.map(artist => artist.thoughts).filter(Boolean))];
+  const buildOptions = [...new Set(artists.map(artist => artist.build).filter(Boolean))];
 
   // Filter artists
   const filteredArtists = artists.filter((artist: Artist) => {
