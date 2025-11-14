@@ -329,16 +329,17 @@ function App() {
                       {artist.skills[1] ? (
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                            [
-                              '20% Skill Damage', 
-                              '50% Basic Attack Damage',
-                              '12% Reduction Normal Attack Damage',
-                              '12% Skill Damage Reduction'
-                            ].includes(artist.skills[1].trim())
-                              ? artist.skills[1].trim() === '20% Skill Damage' || artist.skills[1].trim() === '50% Basic Attack Damage'
-                                ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
-                                : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
-                              : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
+                            artist.skills[1].trim() === '50% Basic Attack Damage'
+                              ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-sm border border-green-300/60 font-semibold'
+                              : [
+                                  '20% Skill Damage', 
+                                  '12% Reduction Normal Attack Damage',
+                                  '12% Skill Damage Reduction'
+                                ].includes(artist.skills[1].trim())
+                                ? artist.skills[1].trim() === '20% Skill Damage'
+                                  ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
+                                  : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
+                                : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
                           }`}
                         >
                           {artist.skills[1]}
@@ -353,16 +354,17 @@ function App() {
                       {artist.skills[2] ? (
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                            [
-                              '20% Skill Damage', 
-                              '50% Basic Attack Damage',
-                              '12% Reduction Normal Attack Damage',
-                              '12% Skill Damage Reduction'
-                            ].includes(artist.skills[2].trim())
-                              ? artist.skills[2].trim() === '20% Skill Damage' || artist.skills[2].trim() === '50% Basic Attack Damage'
-                                ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
-                                : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
-                              : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
+                            artist.skills[2].trim() === '50% Basic Attack Damage'
+                              ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-sm border border-green-300/60 font-semibold'
+                              : [
+                                  '20% Skill Damage', 
+                                  '12% Reduction Normal Attack Damage',
+                                  '12% Skill Damage Reduction'
+                                ].includes(artist.skills[2].trim())
+                                ? artist.skills[2].trim() === '20% Skill Damage'
+                                  ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white shadow-sm border border-emerald-300/60 font-semibold'
+                                  : 'bg-gradient-to-r from-teal-400 to-cyan-600 text-white shadow-sm border border-cyan-300/50'
+                                : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
                           }`}
                         >
                           {artist.skills[2]}
