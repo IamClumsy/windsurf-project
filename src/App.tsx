@@ -181,7 +181,7 @@ function App() {
       {/* Main Content */}
       <main className="mx-auto w-fit bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-2xl text-white shadow-2xl border border-amber-500/20 backdrop-blur-sm">
         <div className="overflow-x-auto">
-          <table className="mx-auto table-auto table-force-white table-with-spacing">
+          <table className="mx-auto table-auto table-force-white table-with-spacing italic">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               {/* Filter row */}
               <tr className="align-middle">
@@ -190,7 +190,7 @@ function App() {
                   <select
                     value={selectedGenre}
                     onChange={(e) => setSelectedGenre(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Genre</option>
                     {genres.map(genre => (
@@ -202,7 +202,7 @@ function App() {
                   <select
                     value={selectedRole}
                     onChange={(e) => setSelectedRole(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Role</option>
                     {roles.map(role => (
@@ -214,7 +214,7 @@ function App() {
                   <select
                     value={selectedRank}
                     onChange={(e) => setSelectedRank(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Rank</option>
                     {rankOptions.map(rank => (
@@ -226,7 +226,7 @@ function App() {
                   <select
                     value={selectedSkill}
                     onChange={(e) => setSelectedSkill(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Skill 2</option>
                     {skills.map(skill => (
@@ -238,7 +238,7 @@ function App() {
                   <select
                     value={selectedSkill3}
                     onChange={(e) => setSelectedSkill3(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Skill 3</option>
                     {skills.map(skill => (
@@ -250,7 +250,7 @@ function App() {
                   <select
                     value={selectedThoughts}
                     onChange={(e) => setSelectedThoughts(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Thoughts</option>
                     {thoughtsOptions.map(thought => (
@@ -262,7 +262,7 @@ function App() {
                   <select
                     value={selectedBuild}
                     onChange={(e) => setSelectedBuild(e.target.value)}
-                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60 not-italic"
                   >
                     <option value="">Select Build</option>
                     {buildOptions.map(build => (
