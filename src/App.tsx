@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import { FaStar, FaSearch, FaMedal, FaMicrophone, FaShoePrints, FaUserTie } from 'react-icons/fa';
+import { useState, useEffect } from 'react';
+import { FaStar, FaSearch, FaMedal, FaMicrophone, FaShoePrints, FaUserTie, FaMusic } from 'react-icons/fa';
 import artistsData from './data/artists.json';
+// File saving functionality would be implemented here in a production environment
 
 interface Artist {
   id: number;
@@ -18,6 +19,7 @@ interface Artist {
 }
 
 function App() {
+  const [artists, setArtists] = useState<Artist[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGroup, setSelectedGroup] = useState('');
   const [selectedRank, setSelectedRank] = useState('');
@@ -26,23 +28,120 @@ function App() {
   const [selectedSkill, setSelectedSkill] = useState('');
   const [selectedThoughts, setSelectedThoughts] = useState('');
   const [selectedBuild, setSelectedBuild] = useState('');
+  const [showAddModal, setShowAddModal] = useState(false);
+  
+  // New artist form state
+  const [newArtist, setNewArtist] = useState<Partial<Artist>>({
+    id: Math.max(...artistsData.map(a => a.id), 0) + 1,
+    name: '',
+    group: '',
+    genre: '',
+    position: '',
+    rank: '',
+    skills: [],
+    description: '',
+    image: 'https://via.placeholder.com/200x200?text=N',
+    thoughts: '',
+    build: ''
+  });
+
+  // Save artists to JSON file
+  const saveArtists = async (updatedArtists: Artist[]) => {
+    try {
+      // In a real app, you would send this to a backend API
+      // For this example, we'll just update the state
+      setArtists(updatedArtists);
+      
+      // In a real Electron app, you could use the following:
+      // await writeFile(
+      //   './src/data/artists.json',
+      //   JSON.stringify(updatedArtists, null, 2)
+      // );
+      
+      console.log('Artists saved successfully!');
+    } catch (error) {
+      console.error('Error saving artists:', error);
+    }
+  };
+
+  // Handle adding a new artist
+  const handleAddArtist = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newArtistData: Artist = {
+      ...newArtist as Required<Artist>,
+      id: Math.max(0, ...artists.map(a => a.id)) + 1,
+      skills: newArtist.skills || [],
+      rating: null,
+    };
+    
+    const updatedArtists = [...artists, newArtistData];
+    saveArtists(updatedArtists);
+    
+    // Close the modal and reset the form
+    setShowAddModal(false);
+    setNewArtist({
+      id: Math.max(0, ...artists.map(a => a.id)) + 2,
+      name: '',
+      group: '',
+      genre: '',
+      position: '',
+      rank: '',
+      skills: [],
+      description: '',
+      image: 'https://via.placeholder.com/200x200?text=N',
+      thoughts: '',
+      build: ''
+    });
+  };
+
+  // Load artists data on component mount
+  useEffect(() => {
+    try {
+      // Try to load from localStorage first
+      const savedArtists = localStorage.getItem('apexArtists');
+      if (savedArtists) {
+        setArtists(JSON.parse(savedArtists));
+      } else {
+        // Fall back to the initial data if nothing in localStorage
+        setArtists(artistsData);
+        // Save the initial data to localStorage
+        localStorage.setItem('apexArtists', JSON.stringify(artistsData));
+      }
+    } catch (error) {
+      console.error('Error loading artists:', error);
+      // Fall back to initial data if there's an error
+      setArtists(artistsData);
+    }
+  }, []);
+
+  // Save to localStorage whenever artists change
+  useEffect(() => {
+    if (artists.length > 0) {
+      try {
+        localStorage.setItem('apexArtists', JSON.stringify(artists));
+      } catch (error) {
+        console.error('Error saving artists to localStorage:', error);
+      }
+    }
+  }, [artists]);
 
   // Get unique values for filters
-  const groupOptions = [...new Set(artistsData.map(artist => artist.group))];
-  const rankOptions = [...new Set(artistsData.map(artist => artist.rank))];
-  const roles = [...new Set(artistsData.map(artist => artist.position))];
-  const genres = [...new Set(artistsData.map(artist => artist.genre))];
-  const skills = [...new Set(artistsData.flatMap(artist => artist.skills).filter(Boolean))];
+  const groupOptions = [...new Set(artists.map(artist => artist.group))];
+  const rankOptions = [...new Set(artists.map(artist => artist.rank))];
+  const roles = [...new Set(artists.map(artist => artist.position))];
+  const genres = [...new Set(artists.map(artist => artist.genre))];
+  const allSkills = [...new Set(artists.flatMap(artist => artist.skills).filter(Boolean))];
+  const skills = allSkills; // Alias for backward compatibility
   const thoughtsOptions = ['Yes', 'No', 'If Nothing Better', 'Bad'];
   const buildOptions = ['Skill Build', 'Standard Build'];
 
   // Filter artists
-  const filteredArtists = artistsData.filter((artist: Artist) => {
+  const filteredArtists = artists.filter((artist: Artist) => {
     const searchLower = searchTerm.toLowerCase();
     const matchesSearch = 
       artist.name.toLowerCase().includes(searchLower) ||
       artist.group?.toLowerCase().includes(searchLower) ||
-      artist.skills.some(skill => skill && skill.toLowerCase().includes(searchLower));
+      artist.skills.some((skill: string) => skill && skill.toLowerCase().includes(searchLower));
     
     const matchesGroup = selectedGroup === '' || artist.group === selectedGroup;
     const matchesRank = selectedRank === '' || artist.rank === selectedRank;
@@ -60,10 +159,19 @@ function App() {
 
   return (
     <div className="w-full min-h-screen bg-gray-900">
+      <header className="mb-8 flex justify-between items-center">
+        <h1 className="text-3xl font-bold text-amber-400">Apex Girl Artist Picker</h1>
+        <button
+          onClick={() => setShowAddModal(true)}
+          className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+          title="Add New Artist"
+        >
+          <FaMusic size={24} />
+        </button>
+      </header>
       <div className="max-w-[95vw] mx-auto flex-1 flex flex-col items-center py-8 text-white">
       {/* Header */}
       <header className="w-full max-w-7xl mb-8 text-center">
-        <h1 className="text-3xl font-bold text-amber-400 mb-6">Apex Girl Artist Picker</h1>
         
         {/* Search and Filters */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -299,6 +407,134 @@ function App() {
         <p>© {new Date().getFullYear()} JustMick's Artist Helper</p>
       </footer>
       </div>
+
+      {/* Add Artist Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold">Add New Artist</h2>
+              <button 
+                onClick={() => setShowAddModal(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <form onSubmit={handleAddArtist} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Name</label>
+                <input
+                  type="text"
+                  value={newArtist.name}
+                  onChange={(e) => setNewArtist({...newArtist, name: e.target.value})}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  required
+                />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Group</label>
+                  <input
+                    type="text"
+                    value={newArtist.group}
+                    onChange={(e) => setNewArtist({...newArtist, group: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Position</label>
+                  <select
+                    value={newArtist.position}
+                    onChange={(e) => setNewArtist({...newArtist, position: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  >
+                    <option value="">Select Position</option>
+                    {roles.map((role) => (
+                      <option key={role} value={role}>{role}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Rank</label>
+                  <select
+                    value={newArtist.rank}
+                    onChange={(e) => setNewArtist({...newArtist, rank: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  >
+                    <option value="">Select Rank</option>
+                    {rankOptions.map((rank) => (
+                      <option key={rank} value={rank}>{rank}</option>
+                    ))}
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Genre</label>
+                  <select
+                    value={newArtist.genre}
+                    onChange={(e) => setNewArtist({...newArtist, genre: e.target.value})}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                    required
+                  >
+                    <option value="">Select Genre</option>
+                    {genres.map((genre) => (
+                      <option key={genre} value={genre}>{genre}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Skills (comma separated)</label>
+                <input
+                  type="text"
+                  value={Array.isArray(newArtist.skills) ? newArtist.skills.join(', ') : ''}
+                  onChange={(e) => setNewArtist({...newArtist, skills: e.target.value.split(',').map(s => s.trim())})}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Skill 1, Skill 2, Skill 3"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700">Description</label>
+                <textarea
+                  value={newArtist.description}
+                  onChange={(e) => setNewArtist({...newArtist, description: e.target.value})}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  rows={3}
+                  required
+                />
+              </div>
+              
+              <div className="flex justify-end space-x-3">
+                <button
+                  type="button"
+                  onClick={() => setShowAddModal(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  Add Artist
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
