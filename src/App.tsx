@@ -399,8 +399,8 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-8 py-4 w-full flex justify-center items-center text-white text-sm">
-        <p>© {new Date().getFullYear()} JustMick's Artist Helper</p>
+      <footer className="mt-8 py-4 w-full flex justify-center items-center text-sm relative z-10">
+        <p className="text-white font-medium">© {new Date().getFullYear()} JustMick's Artist Helper</p>
       </footer>
       </div>
     </div>
