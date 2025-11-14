@@ -295,32 +295,17 @@ function App() {
                     </div>
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap">
-                    <div className="flex items-center justify-center">
-                      {artist.position.toLowerCase() === 'vocalist' ? (
-                        <FaMicrophone className="text-blue-400 flex-shrink-0" />
-                      ) : artist.position.toLowerCase() === 'dancer' ? (
-                        <FaShoePrints className="text-pink-400 flex-shrink-0" />
-                      ) : (
-                        <FaUserTie className="text-gray-400 flex-shrink-0" />
-                      )}
-                      <span className="ml-1 text-sm text-white" title={artist.position}>
-                        {artist.position}
-                      </span>
+                    <div className="text-sm text-white text-center" title={artist.position}>
+                      {artist.position}
                     </div>
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap">
-                    <div className="flex items-center justify-center">
-                      <FaMedal className="text-yellow-400 flex-shrink-0" />
-                      <span className="ml-1 text-sm font-medium text-white" title={artist.rank}>
-                        {artist.rank}
-                      </span>
+                    <div className="text-sm font-medium text-white text-center" title={artist.rank}>
+                      {artist.rank}
                       {artist.rating && artist.rating > 0 && (
-                        <div className="flex items-center ml-1">
-                          <FaStar className="text-yellow-400 flex-shrink-0" />
-                          <span className="ml-0.5 text-xs text-white/80">
-                            {(artist.rating as number).toFixed(1)}
-                          </span>
-                        </div>
+                        <span className="ml-1 text-xs text-white/80">
+                          ({(artist.rating as number).toFixed(1)})
+                        </span>
                       )}
                     </div>
                   </td>
