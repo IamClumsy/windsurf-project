@@ -150,9 +150,9 @@ function App() {
           <FaMusic size={24} />
         </button>
       </header>
-      <div className="w-full flex justify-center py-8 text-white">
+      <div className="w-full flex flex-col items-center py-8 text-white gap-8">
       {/* Header */}
-      <header className="w-full max-w-7xl mb-8 text-center">
+      <header className="max-w-7xl w-full mb-8 text-center">
         
         {/* Search and Filters */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -247,7 +247,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="w-full max-w-7xl px-4 bg-gray-800/80 rounded-lg text-white flex justify-center">
+      <main className="max-w-7xl w-full px-4 bg-gray-800/80 rounded-lg text-white flex justify-center">
         <div className="overflow-x-auto w-full flex justify-center">
           <table className="table-auto divide-y divide-amber-400/30 table-force-white">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
@@ -388,7 +388,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full max-w-7xl mt-8 py-4 text-center text-white text-sm">
+      <footer className="max-w-7xl w-full mt-8 py-4 text-center text-white text-sm">
         <p>© {new Date().getFullYear()} JustMick's Artist Helper</p>
       </footer>
       </div>
