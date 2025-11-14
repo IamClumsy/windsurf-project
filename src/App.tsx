@@ -24,7 +24,9 @@ function App() {
   const [selectedRank, setSelectedRank] = useState('');
   const [selectedRole, setSelectedRole] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
-  const [selectedSkill, setSelectedSkill] = useState('');
+  // Skill 2 and Skill 3 independent filters
+  const [selectedSkill, setSelectedSkill] = useState(''); // Skill 2
+  const [selectedSkill3, setSelectedSkill3] = useState(''); // Skill 3
   const [selectedThoughts, setSelectedThoughts] = useState('');
   const [selectedBuild, setSelectedBuild] = useState('');
 
@@ -114,14 +116,15 @@ function App() {
     const matchesRank = selectedRank === '' || artist.rank === selectedRank;
     const matchesRole = selectedRole === '' || artist.position === selectedRole;
     const matchesGenre = selectedGenre === '' || artist.genre === selectedGenre;
-    const matchesSkill = selectedSkill === '' || artist.skills?.includes(selectedSkill);
+    const matchesSkill = selectedSkill === '' || artist.skills[1] === selectedSkill; // Skill 2 filter
+    const matchesSkill3 = selectedSkill3 === '' || artist.skills[2] === selectedSkill3; // Skill 3 filter
     const matchesThoughts = selectedThoughts === '' || 
       (selectedThoughts === 'Yes' && artist.thoughts) || 
       (selectedThoughts === 'No' && !artist.thoughts);
     const matchesBuild = selectedBuild === '' || 
       (artist.build && artist.build.toLowerCase().includes(selectedBuild.toLowerCase()));
     
-    return matchesSearch && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesThoughts && matchesBuild;
+    return matchesSearch && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesSkill3 && matchesThoughts && matchesBuild;
   }).sort((a, b) => {
     // Sort by genre first
     const genreCompare = a.genre.localeCompare(b.genre);
@@ -231,7 +234,18 @@ function App() {
                     ))}
                   </select>
                 </th>
-                <th className="px-6 py-2"></th>
+                <th className="px-6 py-2">
+                  <select
+                    value={selectedSkill3}
+                    onChange={(e) => setSelectedSkill3(e.target.value)}
+                    className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
+                  >
+                    <option value="">Skill 3 Any</option>
+                    {skills.map(skill => (
+                      <option key={skill + '-3'} value={skill}>{skill || 'No Skill'}</option>
+                    ))}
+                  </select>
+                </th>
                 <th className="px-6 py-2">
                   <select
                     value={selectedThoughts}
