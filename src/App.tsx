@@ -125,17 +125,31 @@ function App() {
       (artist.build && artist.build.toLowerCase().includes(selectedBuild.toLowerCase()));
     
     return matchesSearch && matchesGroup && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesThoughts && matchesBuild;
+  }).sort((a, b) => {
+    // Sort by genre first
+    const genreCompare = a.genre.localeCompare(b.genre);
+    if (genreCompare !== 0) return genreCompare;
+    
+    // Then by role/position
+    const roleCompare = a.position.localeCompare(b.position);
+    if (roleCompare !== 0) return roleCompare;
+    
+    // Finally by artist name
+    return a.name.localeCompare(b.name);
   });
 
   return (
     <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center">
-      <header className="mb-8 flex flex-col items-center gap-4 app-header">
-        <h1 className="text-3xl font-bold text-white" style={{ color: '#ffffff' }}>JustMick's Awesome Artist Helper</h1>
+      <div className="w-full flex flex-col items-center py-8 text-white gap-8">
+      
+      <div className="flex flex-col items-center gap-8 w-full max-w-md mx-auto px-4">
+      {/* Page Title */}
+      <header className="flex flex-col items-center gap-4 app-header">
+        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg tracking-tight" style={{ color: '#ffffff' }}>JustMick's Awesome Artist Helper</h1>
         <button
           type="button"
           onClick={() => {
             console.log('Add Artist button clicked');
-            // Pass data to the modal window
             (window as any).__artistData = {
               roles: roles,
               genres: genres,
@@ -144,23 +158,20 @@ function App() {
             };
             window.open('/add-artist.html', 'AddArtistModal', 'width=500,height=700,resizable=yes,scrollbars=yes');
           }}
-          className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+          className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110 transform"
           title="Add New Artist"
         >
           <FaMusic size={24} />
         </button>
       </header>
-      <div className="w-full flex flex-col items-center py-8 text-white gap-8 border-4 border-red-500">
-      {/* Header */}
-      <header className="max-w-7xl w-full mb-8 text-center">
-        
-        {/* Search and Filters */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div className="relative">
+      
+      {/* Search and Filters */}
+      <div className="flex flex-col items-center gap-4 w-full">
+        <div className="relative w-full">
             <input
               type="text"
               placeholder="Search artists..."
-              className="w-full px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -170,7 +181,7 @@ function App() {
           <select
             value={selectedGroup}
             onChange={(e) => setSelectedGroup(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Group</option>
             {groupOptions.map(group => (
@@ -181,7 +192,7 @@ function App() {
           <select
             value={selectedRank}
             onChange={(e) => setSelectedRank(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Rank</option>
             {rankOptions.map(rank => (
@@ -192,7 +203,7 @@ function App() {
           <select
             value={selectedRole}
             onChange={(e) => setSelectedRole(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Role</option>
             {roles.map(role => (
@@ -203,7 +214,7 @@ function App() {
           <select
             value={selectedGenre}
             onChange={(e) => setSelectedGenre(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Genre</option>
             {genres.map(genre => (
@@ -214,7 +225,7 @@ function App() {
           <select
             value={selectedSkill}
             onChange={(e) => setSelectedSkill(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Skill</option>
             {skills.map(skill => (
@@ -225,7 +236,7 @@ function App() {
           <select
             value={selectedThoughts}
             onChange={(e) => setSelectedThoughts(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Thoughts</option>
             {thoughtsOptions.map(thought => (
@@ -236,7 +247,7 @@ function App() {
           <select
             value={selectedBuild}
             onChange={(e) => setSelectedBuild(e.target.value)}
-            className="px-4 py-2 rounded-lg bg-gray-800 border border-amber-500/30 text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full px-4 py-3 rounded-xl bg-gray-800/90 border border-amber-500/40 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent shadow-md transition-all duration-200 cursor-pointer hover:border-amber-500/60"
           >
             <option value="">Select Build</option>
             {buildOptions.map(build => (
@@ -244,24 +255,24 @@ function App() {
             ))}
           </select>
         </div>
-      </header>
+      </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl w-full px-4 bg-gray-800/80 rounded-lg text-white flex justify-center">
-        <div className="overflow-x-auto w-full flex justify-center">
-          <table className="table-auto divide-y divide-amber-400/30 table-force-white">
+      <main className="mx-auto w-fit bg-gradient-to-br from-gray-800/90 to-gray-900/90 rounded-2xl text-white shadow-2xl border border-amber-500/20 backdrop-blur-sm">
+        <div className="overflow-x-auto">
+          <table className="mx-auto table-auto table-force-white table-with-spacing">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
-              <tr className="divide-x divide-amber-400/20">
-                <th className="px-3 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider w-[12ch] min-w-[12ch] max-w-[12ch]">
+              <tr>
+                <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
                   <div className="truncate" title="Artist">Artist</div>
                 </th>
-                <th className="px-3 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider w-[12ch] min-w-[12ch] max-w-[12ch]">
+                <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
                   <div className="truncate" title="Genre">Genre</div>
                 </th>
-                <th className="px-3 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider w-[12ch] min-w-[12ch] max-w-[12ch]">
+                <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
                   <div className="truncate" title="Role">Role</div>
                 </th>
-                <th className="px-3 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider w-[12ch] min-w-[12ch] max-w-[12ch]">
+                <th className="px-4 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">
                   <div className="truncate" title="Rank">Rank</div>
                 </th>
                 <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill 2</th>
@@ -270,20 +281,20 @@ function App() {
                 <th className="px-6 py-4 text-center text-sm font-semibold text-white uppercase tracking-wider">Skill Based Build</th>
               </tr>
             </thead>
-            <tbody className="bg-gray-800/80 divide-y divide-amber-400/30">
+            <tbody className="bg-gray-800/80">
               {filteredArtists.map((artist) => (
                 <tr key={artist.id} className="hover:bg-amber-400/10 transition-colors duration-200">
-                  <td className="px-3 py-4 whitespace-nowrap w-[12ch] min-w-[12ch] max-w-[12ch] overflow-hidden">
-                    <div className="text-sm font-medium text-white truncate" title={artist.name}>
+                  <td className="px-4 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-white" title={artist.name}>
                       {artist.name}
                     </div>
                   </td>
-                  <td className="px-3 py-4 whitespace-nowrap w-[12ch] min-w-[12ch] max-w-[12ch] overflow-hidden">
-                    <div className="text-sm text-amber-100 truncate" title={artist.genre}>
+                  <td className="px-4 py-4 whitespace-nowrap">
+                    <div className="text-sm text-amber-100" title={artist.genre}>
                       {artist.genre}
                     </div>
                   </td>
-                  <td className="px-3 py-4 whitespace-nowrap w-[12ch] min-w-[12ch] max-w-[12ch] overflow-hidden">
+                  <td className="px-4 py-4 whitespace-nowrap">
                     <div className="flex items-center justify-center">
                       {artist.position.toLowerCase() === 'vocalist' ? (
                         <FaMicrophone className="text-blue-400 flex-shrink-0" />
@@ -292,15 +303,15 @@ function App() {
                       ) : (
                         <FaUserTie className="text-gray-400 flex-shrink-0" />
                       )}
-                      <span className="ml-1 text-sm text-white truncate" title={artist.position}>
+                      <span className="ml-1 text-sm text-white" title={artist.position}>
                         {artist.position}
                       </span>
                     </div>
                   </td>
-                  <td className="px-3 py-4 whitespace-nowrap w-[12ch] min-w-[12ch] max-w-[12ch] overflow-hidden">
+                  <td className="px-4 py-4 whitespace-nowrap">
                     <div className="flex items-center justify-center">
                       <FaMedal className="text-yellow-400 flex-shrink-0" />
-                      <span className="ml-1 text-sm font-medium text-white truncate" title={artist.rank}>
+                      <span className="ml-1 text-sm font-medium text-white" title={artist.rank}>
                         {artist.rank}
                       </span>
                       {artist.rating && artist.rating > 0 && (
@@ -313,7 +324,7 @@ function App() {
                       )}
                     </div>
                   </td>
-                  <td className="px-2 py-4">
+                  <td className="px-4 py-4">
                     <div className="flex justify-center">
                       {artist.skills[1] ? (
                         <span
@@ -337,7 +348,7 @@ function App() {
                       )}
                     </div>
                   </td>
-                  <td className="px-2 py-4">
+                  <td className="px-4 py-4">
                     <div className="flex justify-center">
                       {artist.skills[2] ? (
                         <span
@@ -388,7 +399,7 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="max-w-7xl w-full mt-8 py-4 text-center text-white text-sm">
+      <footer className="mt-8 py-4 text-center text-white text-sm">
         <p>© {new Date().getFullYear()} JustMick's Artist Helper</p>
       </footer>
       </div>

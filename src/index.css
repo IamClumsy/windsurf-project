@@ -31,7 +31,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background-attachment: fixed;
   padding: 0;
 }
 
@@ -92,4 +93,22 @@ html {
 /* High-specificity override for header title to beat external CSS */
 .app-header h1 {
   color: #ffffff !important;
+}
+
+/* Table spacing - force horizontal gaps between columns */
+.table-with-spacing {
+  border-collapse: separate !important;
+  border-spacing: 1rem 0 !important;
+}
+
+@media (min-width: 768px) {
+  .table-with-spacing {
+    border-spacing: 1.5rem 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table-with-spacing {
+    border-spacing: 2rem 0 !important;
+  }
 }
