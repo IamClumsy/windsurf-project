@@ -126,15 +126,13 @@ function App() {
     
     return matchesSearch && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesSkill3 && matchesThoughts && matchesBuild;
   }).sort((a, b) => {
-    // Sort by genre first
+    const aIsUR = a.rank.startsWith('UR');
+    const bIsUR = b.rank.startsWith('UR');
+    if (aIsUR !== bIsUR) return aIsUR ? 1 : -1; // push UR ranks to bottom
     const genreCompare = a.genre.localeCompare(b.genre);
     if (genreCompare !== 0) return genreCompare;
-    
-    // Then by role/position
     const roleCompare = a.position.localeCompare(b.position);
     if (roleCompare !== 0) return roleCompare;
-    
-    // Finally by artist name
     return a.name.localeCompare(b.name);
   });
 
