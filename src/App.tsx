@@ -330,7 +330,7 @@ function App() {
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                             artist.skills[1].trim() === '50% Basic Attack Damage'
-                              ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-sm border border-green-300/60 font-semibold'
+                              ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-green-400 shadow-sm border border-green-400/60 font-semibold'
                               : [
                                   '20% Skill Damage', 
                                   '12% Reduction Normal Attack Damage',
@@ -355,7 +355,7 @@ function App() {
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                             artist.skills[2].trim() === '50% Basic Attack Damage'
-                              ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-sm border border-green-300/60 font-semibold'
+                              ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-green-400 shadow-sm border border-green-400/60 font-semibold'
                               : [
                                   '20% Skill Damage', 
                                   '12% Reduction Normal Attack Damage',
