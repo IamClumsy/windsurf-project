@@ -111,6 +111,13 @@ html {
   text-align: center !important;
 }
 
+/* Force footer text to be white and centered */
+footer,
+footer * {
+  color: #ffffff !important;
+  text-align: center !important;
+}
+
 /* Table spacing - force horizontal gaps between columns */
 .table-with-spacing {
   border-collapse: separate !important;
