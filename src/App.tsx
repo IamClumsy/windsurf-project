@@ -267,8 +267,8 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="w-full max-w-7xl mx-auto px-4 bg-gray-800/80 rounded-lg text-white">
-        <div className="w-full overflow-x-auto flex justify-center">
+      <main className="w-full max-w-7xl px-4 bg-gray-800/80 rounded-lg text-white flex justify-center">
+        <div className="overflow-x-auto w-full flex justify-center">
           <table className="table-auto divide-y divide-amber-400/30 table-force-white">
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               <tr className="divide-x divide-amber-400/20">
