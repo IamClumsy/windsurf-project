@@ -128,7 +128,7 @@ function App() {
   });
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 text-white flex items-center justify-center">
+    <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center">
       <header className="mb-8 flex flex-col items-center gap-4 app-header">
         <h1 className="text-3xl font-bold text-white" style={{ color: '#ffffff' }}>JustMick's Awesome Artist Helper</h1>
         <button
@@ -150,7 +150,7 @@ function App() {
           <FaMusic size={24} />
         </button>
       </header>
-      <div className="w-full flex flex-col items-center py-8 text-white gap-8">
+      <div className="w-full flex flex-col items-center py-8 text-white gap-8 border-4 border-red-500">
       {/* Header */}
       <header className="max-w-7xl w-full mb-8 text-center">
         
