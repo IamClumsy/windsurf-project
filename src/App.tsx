@@ -192,7 +192,7 @@ function App() {
                     onChange={(e) => setSelectedGenre(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">All Genres</option>
+                    <option value="">Select Genre</option>
                     {genres.map(genre => (
                       <option key={genre} value={genre}>{genre}</option>
                     ))}
@@ -204,7 +204,7 @@ function App() {
                     onChange={(e) => setSelectedRole(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">All Roles</option>
+                    <option value="">Select Role</option>
                     {roles.map(role => (
                       <option key={role} value={role}>{role}</option>
                     ))}
@@ -216,7 +216,7 @@ function App() {
                     onChange={(e) => setSelectedRank(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">All Ranks</option>
+                    <option value="">Select Rank</option>
                     {rankOptions.map(rank => (
                       <option key={rank} value={rank}>{rank}</option>
                     ))}
@@ -228,7 +228,7 @@ function App() {
                     onChange={(e) => setSelectedSkill(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">Skill 2 Any</option>
+                    <option value="">Select Skill 2</option>
                     {skills.map(skill => (
                       <option key={skill} value={skill}>{skill || 'No Skill'}</option>
                     ))}
@@ -240,7 +240,7 @@ function App() {
                     onChange={(e) => setSelectedSkill3(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">Skill 3 Any</option>
+                    <option value="">Select Skill 3</option>
                     {skills.map(skill => (
                       <option key={skill + '-3'} value={skill}>{skill || 'No Skill'}</option>
                     ))}
@@ -252,7 +252,7 @@ function App() {
                     onChange={(e) => setSelectedThoughts(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">Thoughts Any</option>
+                    <option value="">Select Thoughts</option>
                     {thoughtsOptions.map(thought => (
                       <option key={thought} value={thought}>{thought}</option>
                     ))}
@@ -264,7 +264,7 @@ function App() {
                     onChange={(e) => setSelectedBuild(e.target.value)}
                     className="w-full px-2 py-1 rounded-md bg-gray-700/90 border border-amber-500/40 text-white text-xs focus:outline-none focus:ring-1 focus:ring-amber-500 cursor-pointer hover:border-amber-500/60"
                   >
-                    <option value="">All Builds</option>
+                    <option value="">Select Build</option>
                     {buildOptions.map(build => (
                       <option key={build} value={build}>{build}</option>
                     ))}
