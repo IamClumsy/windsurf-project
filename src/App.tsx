@@ -191,9 +191,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Genre</option>
-                    {genres.map(genre => (
-                      <option key={genre} value={genre}>{genre}</option>
-                    ))}
+                    <optgroup label="Genres">
+                      {genres.map(genre => (
+                        <option key={genre} value={genre}>{genre}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-4 py-2">
@@ -203,9 +205,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Role</option>
-                    {roles.map(role => (
-                      <option key={role} value={role}>{role}</option>
-                    ))}
+                    <optgroup label="Roles">
+                      {roles.map(role => (
+                        <option key={role} value={role}>{role}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-4 py-2">
@@ -215,9 +219,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Rank</option>
-                    {rankOptions.map(rank => (
-                      <option key={rank} value={rank}>{rank}</option>
-                    ))}
+                    <optgroup label="Ranks">
+                      {rankOptions.map(rank => (
+                        <option key={rank} value={rank}>{rank}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-6 py-2">
@@ -227,9 +233,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Skill 2</option>
-                    {skills.map(skill => (
-                      <option key={skill} value={skill}>{skill || 'No Skill'}</option>
-                    ))}
+                    <optgroup label="Skill 2">
+                      {skills.map(skill => (
+                        <option key={skill} value={skill}>{skill || 'No Skill'}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-6 py-2">
@@ -239,9 +247,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Skill 3</option>
-                    {skills.map(skill => (
-                      <option key={skill + '-3'} value={skill}>{skill || 'No Skill'}</option>
-                    ))}
+                    <optgroup label="Skill 3">
+                      {skills.map(skill => (
+                        <option key={skill + '-3'} value={skill}>{skill || 'No Skill'}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-6 py-2">
@@ -251,9 +261,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Thoughts</option>
-                    {thoughtsOptions.map(thought => (
-                      <option key={thought} value={thought}>{thought}</option>
-                    ))}
+                    <optgroup label="Thoughts">
+                      {thoughtsOptions.map(thought => (
+                        <option key={thought} value={thought}>{thought}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-6 py-2">
@@ -263,9 +275,11 @@ function App() {
                     className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
                   >
                     <option value="">Select Build</option>
-                    {buildOptions.map(build => (
-                      <option key={build} value={build}>{build}</option>
-                    ))}
+                    <optgroup label="Builds">
+                      {buildOptions.map(build => (
+                        <option key={build} value={build}>{build}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
               </tr>
