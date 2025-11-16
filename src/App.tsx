@@ -103,14 +103,21 @@ function App() {
   const allSkills = [...new Set(artists.flatMap(artist => artist.skills).filter(Boolean))];
   const skills = allSkills; // Alias for backward compatibility
   // Group skills for dropdown headers
-  const isDamageToPlayer = (skill: string) => {
+  const isGoodBuff = (skill: string) => {
     const t = (skill || '').toLowerCase();
-    return t.includes('damage') && !t.includes('reduc') && !t.includes('taken');
+    return t.includes('skill damage') || t.includes('basic attack damage') || t.includes('basic damage');
   };
-  const bestSkills = skills.filter(isDamageToPlayer);
-  const goodSkills: string[] = [];
+  const isDirectDamage = (skill: string) => {
+    const t = (skill || '').toLowerCase();
+    // Direct damage: time-based or explicit damage that isn't a reduction/taken modifier and not the Good buffs
+    const mentionsDamage = t.includes('damage') && !t.includes('reduc') && !t.includes('taken');
+    const timeBased = t.includes(' sec/') || /\bsec\b/.test(t);
+    return (mentionsDamage || timeBased) && !isGoodBuff(skill);
+  };
+  const bestSkills = skills.filter(isDirectDamage);
+  const goodSkills = skills.filter(isGoodBuff);
   const worstSkills: string[] = [];
-  const okaySkills = skills.filter(s => !bestSkills.includes(s));
+  const okaySkills = skills.filter(s => !bestSkills.includes(s) && !goodSkills.includes(s) && !worstSkills.includes(s));
   const thoughtsOptions = [...new Set(artists.map(artist => artist.thoughts).filter(Boolean))];
   const buildOptions = [...new Set(artists.map(artist => artist.build).filter(Boolean))];
 
