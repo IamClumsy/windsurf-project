@@ -107,25 +107,31 @@ function App() {
     const t = (skill || '').toLowerCase();
     return t.includes('skill damage') || t.includes('basic attack damage') || t.includes('basic damage');
   };
-  const isWorstSkill = (skill: string) => {
+  const isTerribleSkill = (skill: string) => {
     const t = (skill || '').toLowerCase();
     return t.includes('180/dps') || t.includes('200/dps') || 
            t.includes('world building guard') || t.includes('damage wg') ||
-           t.includes('10 sec') || t.includes('10/sec') ||
-           t.includes('gold brick gathering') ||
-           t.includes('driving speed');
+           t.includes('10 sec') || t.includes('10/sec');
+  };
+  const isWorstSkill = (skill: string) => {
+    const t = (skill || '').toLowerCase();
+    return !isTerribleSkill(skill) && (
+      t.includes('gold brick gathering') ||
+      t.includes('driving speed')
+    );
   };
   const isDirectDamage = (skill: string) => {
     const t = (skill || '').toLowerCase();
     // Direct damage: time-based or explicit damage that isn't a reduction/taken modifier and not the Good buffs
     const mentionsDamage = t.includes('damage') && !t.includes('reduc') && !t.includes('taken');
     const timeBased = t.includes(' sec/') || /\bsec\b/.test(t);
-    return (mentionsDamage || timeBased) && !isGoodBuff(skill) && !isWorstSkill(skill);
+    return (mentionsDamage || timeBased) && !isGoodBuff(skill) && !isWorstSkill(skill) && !isTerribleSkill(skill);
   };
+  const terribleSkills = skills.filter(isTerribleSkill);
   const worstSkills = skills.filter(isWorstSkill);
   const bestSkills = skills.filter(isDirectDamage);
   const goodSkills = skills.filter(isGoodBuff);
-  const okaySkills = skills.filter(s => !bestSkills.includes(s) && !goodSkills.includes(s) && !worstSkills.includes(s));
+  const okaySkills = skills.filter(s => !bestSkills.includes(s) && !goodSkills.includes(s) && !worstSkills.includes(s) && !terribleSkills.includes(s));
   const thoughtsOptions = [...new Set(artists.map(artist => artist.thoughts).filter(Boolean))];
   const buildOptions = [...new Set(artists.map(artist => artist.build).filter(Boolean))];
 
@@ -271,6 +277,11 @@ function App() {
                         <option key={`s2-worst-${skill}`} value={skill}>{skill}</option>
                       ))}
                     </optgroup>
+                    <optgroup label="Terrible">
+                      {terribleSkills.map(skill => (
+                        <option key={`s2-terrible-${skill}`} value={skill}>{skill}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </th>
                 <th className="px-6 py-2">
@@ -298,6 +309,11 @@ function App() {
                     <optgroup label="Worst">
                       {worstSkills.map(skill => (
                         <option key={`s3-worst-${skill}`} value={skill}>{skill}</option>
+                      ))}
+                    </optgroup>
+                    <optgroup label="Terrible">
+                      {terribleSkills.map(skill => (
+                        <option key={`s3-terrible-${skill}`} value={skill}>{skill}</option>
                       ))}
                     </optgroup>
                   </select>
