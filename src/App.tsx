@@ -110,7 +110,10 @@ function App() {
   const isWorstSkill = (skill: string) => {
     const t = (skill || '').toLowerCase();
     return t.includes('180/dps') || t.includes('200/dps') || 
-           t.includes('world building guard') || t.includes('damage wg');
+           t.includes('world building guard') || t.includes('damage wg') ||
+           t.includes('10 sec') || t.includes('10/sec') ||
+           t.includes('gold brick gathering') ||
+           t.includes('driving speed');
   };
   const isDirectDamage = (skill: string) => {
     const t = (skill || '').toLowerCase();
