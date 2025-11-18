@@ -365,11 +365,11 @@ function App() {
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Genre</th>
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Role</th>
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Rank</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 2</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Mick's Thoughts</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill Based Build</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
               </tr>
             </thead>
             <tbody className="bg-gray-800/80">
@@ -398,19 +398,6 @@ function App() {
                           ({(artist.rating as number).toFixed(1)})
                         </span>
                       )}
-                    </div>
-                  </td>
-                  <td className="px-4 py-4 whitespace-nowrap">
-                    <div className="text-sm font-bold text-center" title={`Points: ${calculateArtistPoints(artist)}`}>
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold ${
-                        calculateArtistPoints(artist) >= 10 ? 'bg-gradient-to-r from-amber-400 to-yellow-600 text-white' :
-                        calculateArtistPoints(artist) >= 7 ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white' :
-                        calculateArtistPoints(artist) >= 4 ? 'bg-gradient-to-r from-blue-400 to-cyan-600 text-white' :
-                        calculateArtistPoints(artist) >= 1 ? 'bg-gradient-to-r from-slate-400 to-slate-600 text-white' :
-                        'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                      }`}>
-                        {calculateArtistPoints(artist)}
-                      </span>
                     </div>
                   </td>
                   <td className="px-4 py-4">
@@ -481,6 +468,19 @@ function App() {
                     }`}>
                       {artist.build || 'N/A'}
                     </span>
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap">
+                    <div className="text-sm font-bold text-center" title={`Points: ${calculateArtistPoints(artist)}`}>
+                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold ${
+                        calculateArtistPoints(artist) >= 10 ? 'bg-gradient-to-r from-amber-400 to-yellow-600 text-white' :
+                        calculateArtistPoints(artist) >= 7 ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white' :
+                        calculateArtistPoints(artist) >= 4 ? 'bg-gradient-to-r from-blue-400 to-cyan-600 text-white' :
+                        calculateArtistPoints(artist) >= 1 ? 'bg-gradient-to-r from-slate-400 to-slate-600 text-white' :
+                        'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                      }`}>
+                        {calculateArtistPoints(artist)}
+                      </span>
+                    </div>
                   </td>
                 </tr>
               ))}
