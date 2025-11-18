@@ -59,16 +59,10 @@ function App() {
   // Load artists data on component mount
   useEffect(() => {
     try {
-      // Try to load from localStorage first
-      const savedArtists = localStorage.getItem('apexArtists');
-      if (savedArtists) {
-        setArtists(JSON.parse(savedArtists));
-      } else {
-        // Fall back to the initial data if nothing in localStorage
-        setArtists(artistsData);
-        // Save the initial data to localStorage
-        localStorage.setItem('apexArtists', JSON.stringify(artistsData));
-      }
+      // Always load from artistsData to ensure we have the latest data
+      setArtists(artistsData);
+      // Save to localStorage
+      localStorage.setItem('apexArtists', JSON.stringify(artistsData));
     } catch (error) {
       console.error('Error loading artists:', error);
       // Fall back to initial data if there's an error
@@ -107,20 +101,24 @@ function App() {
   const isGoodBuff = (skill: string) => {
     const t = (skill || '').toLowerCase();
     return t.includes('skill damage') || t.includes('basic attack damage') || t.includes('basic damage') ||
-           t.includes('10% rally fan capacity');
+           t.includes('driving speed');
   };
   const isTerribleSkill = (skill: string) => {
     const t = (skill || '').toLowerCase();
+    // Exclude damage-dealing skills like "10 sec/1800 Damage"
+    const isDamageSkill = t.includes('damage') && (t.includes('sec/') || /\d+\s*damage/.test(t));
+    if (isDamageSkill) return false;
+    
     return t.includes('180/dps') || t.includes('200/dps') || 
            t.includes('world building guard') || t.includes('damage wg') ||
-           t.includes('10 sec') || t.includes('10/sec');
+           (t.includes('10 sec') && !t.includes('sec/')) || t.includes('10/sec');
   };
   const isWorstSkill = (skill: string) => {
     const t = (skill || '').toLowerCase();
     return !isTerribleSkill(skill) && (
       t.includes('gold brick gathering') ||
-      t.includes('driving speed') ||
-      (t.includes('fan capacity') && !t.includes('10% rally fan capacity'))
+      t.includes('10% rally fan capacity') ||
+      t.includes('fan capacity')
     );
   };
   const isDirectDamage = (skill: string) => {
@@ -137,10 +135,11 @@ function App() {
   const okaySkills = skills.filter(s => !bestSkills.includes(s) && !goodSkills.includes(s) && !worstSkills.includes(s) && !terribleSkills.includes(s));
   
   // Calculate artist points: Best=5, Good=3, Okay=1, Worst=0, Terrible=-1
+  // Skip skill 1 (index 0) when calculating ranking
   const calculateArtistPoints = (artist: Artist) => {
     let points = 0;
-    artist.skills.forEach(skill => {
-      if (!skill) return;
+    artist.skills.forEach((skill, index) => {
+      if (!skill || index === 0) return; // Skip skill 1
       if (bestSkills.includes(skill)) points += 5;
       else if (goodSkills.includes(skill)) points += 3;
       else if (okaySkills.includes(skill)) points += 1;
@@ -175,9 +174,7 @@ function App() {
     const matchesGenre = selectedGenre === '' || artist.genre === selectedGenre;
     const matchesSkill = selectedSkill === '' || artist.skills[1] === selectedSkill; // Skill 2 filter
     const matchesSkill3 = selectedSkill3 === '' || artist.skills[2] === selectedSkill3; // Skill 3 filter
-    const matchesThoughts = selectedThoughts === '' || 
-      (selectedThoughts === 'Yes' && artist.thoughts) || 
-      (selectedThoughts === 'No' && !artist.thoughts);
+    const matchesThoughts = selectedThoughts === '' || artist.thoughts === selectedThoughts;
     const matchesBuild = selectedBuild === '' || 
       (artist.build && artist.build.toLowerCase().includes(selectedBuild.toLowerCase()));
     const matchesRanking = selectedRanking === '' || 

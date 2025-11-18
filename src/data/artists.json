@@ -790,5 +790,41 @@
     "image": "https://via.placeholder.com/200x200?text=P",
     "thoughts": "Yes",
     "build": "No"
+  },
+  {
+    "id": 45,
+    "name": "Xenia",
+    "group": "No Group",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "Electronic",
+    "skills": [
+      "10 sec/1800 Damage",
+      "10% Rally Fan Capacity",
+      "20% Damage to Player"
+    ],
+    "description": "Xenia is a talented Center from No Group.",
+    "rating": null,
+    "image": "https://via.placeholder.com/200x200?text=B",
+    "thoughts": "Yes",
+    "build": "No"
+  },
+  {
+    "id": 46,
+    "name": "Daphne",
+    "group": "No Group",
+    "rank": "UR Bali",
+    "position": "Vocalist",
+    "genre": "Hip Hop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "20% Skill Damage",
+      "50% Basic Attack Damage"
+    ],
+    "description": "Daphne is a talented Vocalist from No Group.",
+    "rating": null,
+    "image": "https://via.placeholder.com/200x200?text=A",
+    "thoughts": "Yes",
+    "build": "No"
   }
 ]
