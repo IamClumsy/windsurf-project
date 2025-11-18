@@ -133,6 +133,21 @@ function App() {
   const bestSkills = skills.filter(isDirectDamage);
   const goodSkills = skills.filter(isGoodBuff);
   const okaySkills = skills.filter(s => !bestSkills.includes(s) && !goodSkills.includes(s) && !worstSkills.includes(s) && !terribleSkills.includes(s));
+  
+  // Calculate artist points: Best=5, Good=3, Okay=1, Worst=0, Terrible=-1
+  const calculateArtistPoints = (artist: Artist) => {
+    let points = 0;
+    artist.skills.forEach(skill => {
+      if (!skill) return;
+      if (bestSkills.includes(skill)) points += 5;
+      else if (goodSkills.includes(skill)) points += 3;
+      else if (okaySkills.includes(skill)) points += 1;
+      else if (worstSkills.includes(skill)) points += 0;
+      else if (terribleSkills.includes(skill)) points += -1;
+    });
+    return points;
+  };
+  
   const thoughtsOptions = [...new Set(artists.map(artist => artist.thoughts).filter(Boolean))];
   const buildOptions = [...new Set(artists.map(artist => artist.build).filter(Boolean))];
 
@@ -350,6 +365,7 @@ function App() {
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Genre</th>
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Role</th>
                 <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Rank</th>
+                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 2</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
                 <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Mick's Thoughts</th>
@@ -382,6 +398,19 @@ function App() {
                           ({(artist.rating as number).toFixed(1)})
                         </span>
                       )}
+                    </div>
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap">
+                    <div className="text-sm font-bold text-center" title={`Points: ${calculateArtistPoints(artist)}`}>
+                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold ${
+                        calculateArtistPoints(artist) >= 10 ? 'bg-gradient-to-r from-amber-400 to-yellow-600 text-white' :
+                        calculateArtistPoints(artist) >= 7 ? 'bg-gradient-to-r from-emerald-400 to-green-600 text-white' :
+                        calculateArtistPoints(artist) >= 4 ? 'bg-gradient-to-r from-blue-400 to-cyan-600 text-white' :
+                        calculateArtistPoints(artist) >= 1 ? 'bg-gradient-to-r from-slate-400 to-slate-600 text-white' :
+                        'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                      }`}>
+                        {calculateArtistPoints(artist)}
+                      </span>
                     </div>
                   </td>
                   <td className="px-4 py-4">
