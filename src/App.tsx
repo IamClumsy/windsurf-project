@@ -101,6 +101,8 @@ function App() {
   // Group skills for dropdown headers
   const isGoodBuff = (skill: string) => {
     const t = (skill || '').toLowerCase();
+    // Exclude 60% basic attack damage (moved to BEST)
+    if (t.includes('60%') && t.includes('basic attack damage')) return false;
     return t.includes('skill damage') || t.includes('basic attack damage') || t.includes('basic damage');
   };
   const isTerribleSkill = (skill: string) => {
@@ -127,6 +129,8 @@ function App() {
   };
   const isDirectDamage = (skill: string) => {
     const t = (skill || '').toLowerCase();
+    // Include 60% basic attack damage as BEST
+    if (t.includes('60%') && t.includes('basic attack damage')) return true;
     // Direct damage: time-based or explicit damage that isn't a reduction/taken modifier and not the Good buffs
     const mentionsDamage = t.includes('damage') && !t.includes('reduc') && !t.includes('taken');
     const timeBased = t.includes(' sec/') || /\bsec\b/.test(t);
