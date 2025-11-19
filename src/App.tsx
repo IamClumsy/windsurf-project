@@ -117,8 +117,7 @@ function App() {
     const t = (skill || '').toLowerCase();
     return !isTerribleSkill(skill) && (
       t.includes('gold brick gathering') ||
-      t.includes('10% rally fan capacity') ||
-      t.includes('fan capacity')
+      (t.includes('fan capacity') && !t.includes('10% rally fan capacity'))
     );
   };
   const isDirectDamage = (skill: string) => {
