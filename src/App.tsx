@@ -583,7 +583,7 @@ function App() {
 
       {/* Legend */}
       <div className="flex flex-col items-center w-full max-w-4xl mx-auto px-4">
-        <div className="mt-8 mb-4 px-6 py-4 bg-gray-800/60 backdrop-blur-sm rounded-lg border border-fuchsia-400/30 shadow-lg relative z-10 w-full">
+        <div className="mt-8 mb-4 px-6 py-4 bg-gray-800/95 backdrop-blur-sm rounded-lg border border-fuchsia-400/30 shadow-lg relative z-10 w-full">
           <h3 className="text-lg font-semibold text-pink-100 mb-3 text-center" style={{color: '#ffffff'}}>Skill Color Legend</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="flex items-center gap-3">
