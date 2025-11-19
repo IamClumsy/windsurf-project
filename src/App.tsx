@@ -471,7 +471,7 @@ function App() {
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                             artist.skills[1].toLowerCase().includes('damage to player')
-                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-yellow-400 shadow-sm border border-yellow-400/60 font-bold'
+                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-yellow-300 shadow-lg border border-yellow-300 font-bold'
                               : artist.skills[1].trim() === '50% Basic Attack Damage'
                               ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-green-400 shadow-sm border border-green-400/60 font-semibold'
                               : [
@@ -498,7 +498,7 @@ function App() {
                         <span
                           className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                             artist.skills[2].toLowerCase().includes('damage to player')
-                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-yellow-400 shadow-sm border border-yellow-400/60 font-bold'
+                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-yellow-300 shadow-lg border border-yellow-300 font-bold'
                               : artist.skills[2].trim() === '50% Basic Attack Damage'
                               ? 'bg-gradient-to-r from-slate-700 to-slate-800 text-green-400 shadow-sm border border-green-400/60 font-semibold'
                               : [
