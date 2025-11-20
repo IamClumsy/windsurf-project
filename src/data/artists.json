@@ -14,7 +14,8 @@
     "description": "Kokoro is a talented Center from Tokyo48.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 2,
@@ -31,7 +32,8 @@
     "description": "Everly is a talented Center from DreamCatcher.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 3,
@@ -48,7 +50,8 @@
     "description": "Alice is a talented Vocalist from Fantasy Vibes.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 4,
@@ -65,7 +68,8 @@
     "description": "Cindy is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Own Photos"
   },
   {
     "id": 5,
@@ -82,7 +86,8 @@
     "description": "Longkui is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Own Photos"
   },
   {
     "id": 6,
@@ -99,7 +104,8 @@
     "description": "Anya is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Bad",
-    "build": "No"
+    "build": "No",
+    "photos": "Own Photos"
   },
   {
     "id": 7,
@@ -116,7 +122,8 @@
     "description": "Sari is a talented Vocalist from Coral.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 8,
@@ -133,7 +140,8 @@
     "description": "Natassaja is a talented Vocalist from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 9,
@@ -150,7 +158,8 @@
     "description": "Caroline is a talented Dancer from Fantasy Vibes.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 10,
@@ -167,7 +176,8 @@
     "description": "Audrey is a talented Center from WildFlower.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 11,
@@ -184,7 +194,8 @@
     "description": "Avery is a talented Dancer from Luna.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 12,
@@ -201,7 +212,8 @@
     "description": "Ayaka is a talented Vocalist from Tokyo48.",
     "rating": null,
     "thoughts": "Defensive Car",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 13,
@@ -218,7 +230,8 @@
     "description": "Bella is a talented Vocalist from Luna.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Own Photos"
   },
   {
     "id": 14,
@@ -235,7 +248,8 @@
     "description": "Chizuru is a talented Center from Tokyo48.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 15,
@@ -252,7 +266,8 @@
     "description": "Aurora is a talented Center from Sparkle Artists.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 16,
@@ -269,7 +284,8 @@
     "description": "Savannah is a talented Dancer from Echo.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 17,
@@ -286,7 +302,8 @@
     "description": "Brooklyn is a talented Vocalist from Echo.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 18,
@@ -303,7 +320,8 @@
     "description": "Monica is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Own Photos"
   },
   {
     "id": 19,
@@ -320,7 +338,8 @@
     "description": "Moana is a talented Vocalist from Coral.",
     "rating": null,
     "thoughts": "Defensive Car",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 20,
@@ -337,7 +356,8 @@
     "description": "Zendaya is a talented Center from Radiance.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 21,
@@ -354,7 +374,8 @@
     "description": "Nova is a talented Dancer from DreamCatcher.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 22,
@@ -371,7 +392,8 @@
     "description": "Julia is a talented Vocalist from Radiance.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 23,
@@ -388,7 +410,8 @@
     "description": "Sora is a talented Vocalist from Tokyo48.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 24,
@@ -405,7 +428,8 @@
     "description": "Kesnia is a talented Vocalist from No Group.",
     "rating": null,
     "thoughts": "Bad",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 25,
@@ -422,7 +446,8 @@
     "description": "Ratih is a talented Dancer from Coral.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 26,
@@ -439,7 +464,8 @@
     "description": "Claire is a talented Center from Sparkle Artists.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 27,
@@ -456,7 +482,8 @@
     "description": "Paisley is a talented Dancer from Neon.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 28,
@@ -473,7 +500,8 @@
     "description": "Yuuko is a talented Dancer from Tokyo48.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 29,
@@ -490,7 +518,8 @@
     "description": "Skylar is a talented Vocalist from Neon.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 30,
@@ -507,7 +536,8 @@
     "description": "Kasha is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Own Photos"
   },
   {
     "id": 31,
@@ -524,7 +554,8 @@
     "description": "Talia is a talented Center from Coral.",
     "rating": null,
     "thoughts": "No",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 32,
@@ -541,7 +572,8 @@
     "description": "Leilani is a talented Dancer from Coral.",
     "rating": null,
     "thoughts": "Offensive Car",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 45,
@@ -558,7 +590,8 @@
     "description": "Xenia is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 46,
@@ -575,7 +608,8 @@
     "description": "Daphne is a talented Vocalist from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "Skill Build"
+    "build": "Skill Build",
+    "photos": "Universal"
   },
   {
     "id": 47,
@@ -592,7 +626,8 @@
     "description": "Calliope is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 48,
@@ -609,7 +644,8 @@
     "description": "Ariadne is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   },
   {
     "id": 49,
@@ -626,6 +662,7 @@
     "description": "Eirene is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
-    "build": "No"
+    "build": "No",
+    "photos": "Universal"
   }
 ]

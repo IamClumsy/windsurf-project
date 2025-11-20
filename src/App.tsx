@@ -13,9 +13,10 @@ interface Artist {
   rating?: number | null;
   skills: string[];
   description: string;
-  image: string;
+  image?: string;
   thoughts?: string;
   build?: string;
+  photos?: string;
 }
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   const [selectedThoughts, setSelectedThoughts] = useState('');
   const [selectedBuild, setSelectedBuild] = useState('');
   const [selectedRanking, setSelectedRanking] = useState('');
+  const [selectedPhotos, setSelectedPhotos] = useState('');
 
   // Save artists to JSON file
   const saveArtists = async (updatedArtists: Artist[]) => {
@@ -175,6 +177,7 @@ function App() {
   
   const thoughtsOptions = [...new Set(artists.map(artist => artist.thoughts).filter(Boolean))];
   const buildOptions = [...new Set(artists.map(artist => artist.build).filter(Boolean))];
+  const photosOptions = [...new Set(artists.map(artist => artist.photos).filter(Boolean))];
 
   // Filter artists
   const filteredArtists = artists.filter((artist: Artist) => {
@@ -194,8 +197,9 @@ function App() {
       (artist.build && artist.build.toLowerCase().includes(selectedBuild.toLowerCase()));
     const matchesRanking = selectedRanking === '' || 
       getLetterGrade(calculateArtistPoints(artist)) === selectedRanking;
+    const matchesPhotos = selectedPhotos === '' || artist.photos === selectedPhotos;
     
-    return matchesSearch && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesSkill3 && matchesThoughts && matchesBuild && matchesRanking;
+    return matchesSearch && matchesRank && matchesRole && matchesGenre && matchesSkill && matchesSkill3 && matchesThoughts && matchesBuild && matchesRanking && matchesPhotos;
   }).sort((a, b) => {
     const aIsUR = a.rank.startsWith('UR');
     const bIsUR = b.rank.startsWith('UR');
@@ -280,8 +284,8 @@ function App() {
             <thead className="bg-gray-800/95 backdrop-blur-sm sticky top-0 z-10 shadow-lg">
               {/* Filter row */}
               <tr className="align-middle bg-gradient-to-r from-violet-800/70 via-fuchsia-800/70 to-pink-700/70">
-                <th className="px-4 py-2"></th>
-                <th className="px-4 py-2">
+                <th className="px-2 py-2"></th>
+                <th className="px-2 py-2">
                   <select
                     value={selectedGenre}
                     onChange={(e) => setSelectedGenre(e.target.value)}
@@ -293,7 +297,7 @@ function App() {
                     ))}
                   </select>
                 </th>
-                <th className="px-4 py-2">
+                <th className="px-2 py-2">
                   <select
                     value={selectedRole}
                     onChange={(e) => setSelectedRole(e.target.value)}
@@ -305,7 +309,7 @@ function App() {
                     ))}
                   </select>
                 </th>
-                <th className="px-4 py-2">
+                <th className="px-2 py-2">
                   <select
                     value={selectedRank}
                     onChange={(e) => setSelectedRank(e.target.value)}
@@ -317,7 +321,7 @@ function App() {
                     ))}
                   </select>
                 </th>
-                <th className="px-6 py-2">
+                <th className="px-2 py-2">
                   <select
                     value={selectedSkill}
                     onChange={(e) => setSelectedSkill(e.target.value)}
@@ -399,7 +403,19 @@ function App() {
                     <option value="F">F</option>
                   </select>
                 </th>
-                <th className="px-6 py-2">
+                <th className="px-2 py-2">
+                  <select
+                    value={selectedPhotos}
+                    onChange={(e) => setSelectedPhotos(e.target.value)}
+                    className="w-full px-2 py-1 rounded-md bg-violet-900/60 border border-fuchsia-400/50 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-400/70 cursor-pointer hover:border-pink-300/70 hover:bg-violet-800/60 transition-colors not-italic"
+                  >
+                    <option value="">Select Photos</option>
+                    {photosOptions.map(photo => (
+                      <option key={photo} value={photo}>{photo}</option>
+                    ))}
+                  </select>
+                </th>
+                <th className="px-2 py-2">
                   <select
                     value={selectedBuild}
                     onChange={(e) => setSelectedBuild(e.target.value)}
@@ -426,36 +442,37 @@ function App() {
               </tr>
               {/* Column header row */}
               <tr>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Artist</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Genre</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Role</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Rank</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 2</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill Based Build</th>
-                <th className="px-6 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Mick's Thoughts</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Artist</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Genre</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Role</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Rank</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 2</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Photos</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill Based Build</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Mick's Thoughts</th>
               </tr>
             </thead>
             <tbody className="bg-gray-800/80">
               {filteredArtists.map((artist) => (
                 <tr key={artist.id} className="hover:bg-amber-400/10 transition-colors duration-200">
-                  <td className="px-4 py-4 whitespace-nowrap">
+                  <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm font-medium text-white" title={artist.name}>
                       {artist.name}
                     </div>
                   </td>
-                  <td className="px-4 py-4 whitespace-nowrap">
+                  <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm text-amber-100" title={artist.genre}>
                       {artist.genre}
                     </div>
                   </td>
-                  <td className="px-4 py-4 whitespace-nowrap">
+                  <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm text-white text-center" title={artist.position}>
                       {artist.position}
                     </div>
                   </td>
-                  <td className="px-4 py-4 whitespace-nowrap">
+                  <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm font-medium text-white text-center" title={artist.rank}>
                       {artist.rank}
                       {artist.rating && artist.rating > 0 && (
@@ -465,7 +482,7 @@ function App() {
                       )}
                     </div>
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-2 py-3">
                     <div className="flex justify-center">
                       {artist.skills[1] ? (
                         <span
@@ -503,7 +520,7 @@ function App() {
                       )}
                     </div>
                   </td>
-                  <td className="px-4 py-4">
+                  <td className="px-2 py-3">
                     <div className="flex justify-center">
                       {artist.skills[2] ? (
                         <span
@@ -541,7 +558,7 @@ function App() {
                       )}
                     </div>
                   </td>
-                  <td className="px-4 py-4 whitespace-nowrap">
+                  <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm font-bold text-center" title={`Points: ${calculateArtistPoints(artist)}`}>
                       <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700 ${
                         getLetterGrade(calculateArtistPoints(artist)) === 'A' ? 'ranking-a' :
@@ -555,7 +572,12 @@ function App() {
                       </span>
                     </div>
                   </td>
-                  <td className="px-4 py-4 text-center">
+                  <td className="px-2 py-3 text-center">
+                    <span className="text-white text-sm">
+                      {artist.photos || 'N/A'}
+                    </span>
+                  </td>
+                  <td className="px-2 py-3 text-center">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                       artist.build === 'Skill Build' ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-sm' :
                       'bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white shadow-sm'
@@ -563,7 +585,7 @@ function App() {
                       {artist.build || 'N/A'}
                     </span>
                   </td>
-                  <td className="px-4 py-4 text-center">
+                  <td className="px-2 py-3 text-center">
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                       artist.thoughts === 'Yes' ? 'bg-gradient-to-r from-green-400 to-emerald-600 text-white shadow-sm' :
                       artist.thoughts === 'No' ? 'bg-gradient-to-r from-red-500 to-rose-600 text-white shadow-sm' :
