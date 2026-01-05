@@ -26,7 +26,7 @@
     "genre": "Electronic",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "12% Skill Damage Reduction"
     ],
     "description": "Everly is a talented Center from DreamCatcher.",
@@ -62,7 +62,7 @@
     "genre": "Electronic",
     "skills": [
       "10 sec/1800 Damage",
-      "15% Reduction Normal Attack Damage",
+      "15% Reduction Basic Attack Damage",
       "20% Skill Damage"
     ],
     "description": "Cindy is a talented Center from No Group.",
@@ -189,7 +189,7 @@
     "skills": [
       "10 sec/1800 Damage",
       "12% Skill Damage Reduction",
-      "12% Reduction Normal Attack Damage"
+      "12% Reduction Basic Attack Damage"
     ],
     "description": "Avery is a talented Dancer from Luna.",
     "rating": null,
@@ -206,7 +206,7 @@
     "genre": "Hip Hop",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "12% Skill Damage Reduction"
     ],
     "description": "Ayaka is a talented Vocalist from Tokyo48.",
@@ -332,7 +332,7 @@
     "genre": "Pop",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "12% Skill Damage Reduction"
     ],
     "description": "Moana is a talented Vocalist from Coral.",
@@ -440,7 +440,7 @@
     "genre": "R&B",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "50% Basic Attack Damage"
     ],
     "description": "Ratih is a talented Dancer from Coral.",
@@ -476,7 +476,7 @@
     "genre": "Rock",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "12% Skill Damage Reduction"
     ],
     "description": "Paisley is a talented Dancer from Neon.",
@@ -494,7 +494,7 @@
     "genre": "Rock",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "50% Basic Attack Damage"
     ],
     "description": "Yuuko is a talented Dancer from Tokyo48.",
@@ -638,7 +638,7 @@
     "genre": "Pop",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "50% Basic Attack Damage"
     ],
     "description": "Ariadne is a talented Center from No Group.",
@@ -656,7 +656,7 @@
     "genre": "R&B",
     "skills": [
       "10 sec/1800 Damage",
-      "12% Reduction Normal Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "50% Basic Attack Damage"
     ],
     "description": "Eirene is a talented Dancer from No Group.",
@@ -728,7 +728,7 @@
     "genre": "Rock",
     "skills": [
       "10 sec/1800 Damage",
-      "15% Reduction Normal Attack Damage",
+      "15% Reduction Basic Attack Damage",
       "25% Damage to Player"
     ],
     "description": "Riku is a talented Vocalist from Rina.",
@@ -746,7 +746,7 @@
     "genre": "Electronic",
     "skills": [
       "10 sec/1800 Damage",
-      "15% Reduction Normal Attack Damage",
+      "15% Reduction Basic Attack Damage",
       "60% Basic Attack Damage"
     ],
     "description": "Miyuki is a talented Dancer from Rina.",
