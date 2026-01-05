@@ -203,12 +203,12 @@ function App() {
     return points;
   };
   
-  // Convert points to letter grade: 7-9=A, 3-6=B, 1-2=C, -1 to -2=D, -3=F
+  // Convert points to letter grade: 7-9=S, 3-6=A, 1-2=B, -1 to -2=C, -3=F
   const getLetterGrade = (points: number) => {
-    if (points >= 7) return 'A';
-    if (points >= 3) return 'B';
-    if (points >= 1) return 'C';
-    if (points >= -2) return 'D';
+    if (points >= 7) return 'S';
+    if (points >= 3) return 'A';
+    if (points >= 1) return 'B';
+    if (points >= -2) return 'C';
     return 'F';
   };
   
@@ -583,10 +583,10 @@ function App() {
                   <td className="px-2 py-3 whitespace-nowrap">
                     <div className="text-sm font-bold text-center" title={`Points: ${calculateArtistPoints(artist)}`}>
                       <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700 ${
-                        getLetterGrade(calculateArtistPoints(artist)) === 'A' ? 'ranking-a' :
-                        getLetterGrade(calculateArtistPoints(artist)) === 'B' ? 'ranking-b' :
-                        getLetterGrade(calculateArtistPoints(artist)) === 'C' ? 'ranking-c' :
-                        getLetterGrade(calculateArtistPoints(artist)) === 'D' ? 'ranking-d' :
+                        getLetterGrade(calculateArtistPoints(artist)) === 'S' ? 'ranking-a' :
+                        getLetterGrade(calculateArtistPoints(artist)) === 'A' ? 'ranking-b' :
+                        getLetterGrade(calculateArtistPoints(artist)) === 'B' ? 'ranking-c' :
+                        getLetterGrade(calculateArtistPoints(artist)) === 'C' ? 'ranking-d' :
                         getLetterGrade(calculateArtistPoints(artist)) === 'F' ? 'ranking-f' :
                         'text-white'
                       }`}>
