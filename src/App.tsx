@@ -473,7 +473,7 @@ function App() {
                 <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill 3</th>
                 <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Ranking</th>
                 <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Photos</th>
-                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Skill Build</th>
+                <th className="px-2 py-3 text-center text-sm font-semibold text-pink-100 uppercase tracking-wider">Best Usage</th>
               </tr>
             </thead>
             <tbody className="bg-gray-800/80">
@@ -600,10 +600,7 @@ function App() {
                     </span>
                   </td>
                   <td className="px-2 py-3 text-center">
-                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                      artist.build === 'Skill Build' ? 'bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-sm' :
-                      'bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white shadow-sm'
-                    }`}>
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-purple-500 to-fuchsia-600 text-white shadow-sm`}>
                       {artist.build || 'N/A'}
                     </span>
                   </td>
