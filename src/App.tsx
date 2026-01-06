@@ -618,7 +618,7 @@ function App() {
                 <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700 gold-text">
                   Orange&#9;
                 </span>
-                <span className="text-white text-sm font-bold">Gold Gathering Skill</span>
+                <span className="text-white text-sm font-bold legend-white">Gold Gathering Skill</span>
               </div>
           </div>
         </div>

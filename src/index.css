@@ -58,6 +58,11 @@
   font-weight: 600 !important;
 }
 
+/* Force legend labels white when necessary */
+.legend-white {
+  color: #ffffff !important;
+}
+
 /* Custom ranking styles */
 .ranking-a {
   color: #fde047 !important;
