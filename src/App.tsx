@@ -522,7 +522,6 @@ function App() {
                                   '30% Damage World Building Guard',
                                   '180/DPS Attacking Enemy Company',
                                   '20% Damage WG / 50% Drive Speed',
-                                  '40% Gold Brick Gathering Speed',
                                   '75% Drive Speed'
                                 ].includes(artist.skills[1].trim())
                                 ? 'skill-specific-terrible bg-gradient-to-r from-slate-600 to-slate-700 shadow-sm border border-red-500/40'
@@ -562,7 +561,6 @@ function App() {
                                   '30% Damage World Building Guard',
                                   '180/DPS Attacking Enemy Company',
                                   '20% Damage WG / 50% Drive Speed',
-                                  '40% Gold Brick Gathering Speed',
                                   '75% Drive Speed'
                                 ].includes(artist.skills[2].trim())
                                 ? 'skill-specific-terrible bg-gradient-to-r from-slate-600 to-slate-700 shadow-sm border border-red-500/40'
