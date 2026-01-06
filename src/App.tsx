@@ -246,6 +246,33 @@ function App() {
     return a.name.localeCompare(b.name);
   });
 
+  // Function to get skill badge class
+  const getSkillClass = (skill: string) => {
+    if (!skill) return 'bg-blue-500 text-white';
+    const trimmed = skill.trim();
+    if (trimmed.toLowerCase().includes('damage to player')) return 'damage-to-player bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg';
+    if (trimmed === '60% Basic Attack Damage') return 'basic-attack-60 bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg';
+    if (trimmed === '50% Basic Attack Damage') return 'basic-attack-50 bg-gradient-to-r from-slate-700 to-slate-800 shadow-sm';
+    if (trimmed.includes('Gold Brick')) return 'bg-gradient-to-r from-slate-600 to-slate-700 text-orange-300 border border-slate-500/40';
+    if ([
+      '180/DPS Attacking Group Center, Club, Landmark',
+      '30% Damage World Building Guard',
+      '180/DPS Attacking Enemy Company',
+      '20% Damage WG / 50% Drive Speed',
+      '75% Drive Speed'
+    ].includes(trimmed)) return 'skill-specific-terrible bg-gradient-to-r from-slate-600 to-slate-700 shadow-sm border border-red-500/40';
+    if ([
+      '20% Skill Damage',
+      '30% Skill Damage',
+      '12% Skill Damage Reduction'
+    ].includes(trimmed)) {
+      return trimmed === '20% Skill Damage' || trimmed === '30% Skill Damage'
+        ? 'skill-damage-20 bg-gradient-to-r from-emerald-400 to-green-600 shadow-sm'
+        : 'skill-good bg-gradient-to-r from-teal-400 to-cyan-600 shadow-sm';
+    }
+    return 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40';
+  };
+
   return (
     <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center">
       <div className="w-full flex flex-col items-center py-8 text-white gap-8">
@@ -508,33 +535,7 @@ function App() {
                     <div className="flex justify-center">
                       {artist.skills[1] ? (
                         <span
-                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs shadow-sm transition-all duration-200 ${
-                            artist.skills[1].toLowerCase().includes('damage to player')
-                              ? 'damage-to-player bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg'
-                              : artist.skills[1].trim() === '60% Basic Attack Damage'
-                              ? 'basic-attack-60 bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg'
-                              : artist.skills[1].trim() === '50% Basic Attack Damage'
-                              ? 'basic-attack-50 bg-gradient-to-r from-slate-700 to-slate-800 shadow-sm'
-                              : artist.skills[1].trim() === '40% Gold Brick Gathering Speed'
-                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-orange-300 border border-slate-500/40'
-                              : [
-                                  '180/DPS Attacking Group Center, Club, Landmark',
-                                  '30% Damage World Building Guard',
-                                  '180/DPS Attacking Enemy Company',
-                                  '20% Damage WG / 50% Drive Speed',
-                                  '75% Drive Speed'
-                                ].includes(artist.skills[1].trim())
-                                ? 'skill-specific-terrible bg-gradient-to-r from-slate-600 to-slate-700 shadow-sm border border-red-500/40'
-                                : [
-                                  '20% Skill Damage',
-                                  '30% Skill Damage',
-                                  '12% Skill Damage Reduction'
-                                ].includes(artist.skills[1].trim())
-                                ? artist.skills[1].trim() === '20% Skill Damage' || artist.skills[1].trim() === '30% Skill Damage'
-                                  ? 'skill-damage-20 bg-gradient-to-r from-emerald-400 to-green-600 shadow-sm'
-                                  : 'skill-good bg-gradient-to-r from-teal-400 to-cyan-600 shadow-sm'
-                                : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
-                          }`}
+                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs shadow-sm transition-all duration-200 ${getSkillClass(artist.skills[1])}`}
                         >
                           {artist.skills[1]}
                         </span>
@@ -547,33 +548,7 @@ function App() {
                     <div className="flex justify-center">
                       {artist.skills[2] ? (
                         <span
-                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs shadow-sm transition-all duration-200 ${
-                            artist.skills[2].toLowerCase().includes('damage to player')
-                              ? 'damage-to-player bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg'
-                              : artist.skills[2].trim() === '60% Basic Attack Damage'
-                              ? 'basic-attack-60 bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg'
-                              : artist.skills[2].trim() === '50% Basic Attack Damage'
-                              ? 'basic-attack-50 bg-gradient-to-r from-slate-700 to-slate-800 shadow-sm'
-                              : artist.skills[2].trim() === '40% Gold Brick Gathering Speed'
-                              ? 'bg-gradient-to-r from-slate-600 to-slate-700 text-orange-300 border border-slate-500/40'
-                              : [
-                                  '180/DPS Attacking Group Center, Club, Landmark',
-                                  '30% Damage World Building Guard',
-                                  '180/DPS Attacking Enemy Company',
-                                  '20% Damage WG / 50% Drive Speed',
-                                  '75% Drive Speed'
-                                ].includes(artist.skills[2].trim())
-                                ? 'skill-specific-terrible bg-gradient-to-r from-slate-600 to-slate-700 shadow-sm border border-red-500/40'
-                                : [
-                                  '20% Skill Damage',
-                                  '30% Skill Damage',
-                                  '12% Skill Damage Reduction'
-                                ].includes(artist.skills[2].trim())
-                                ? artist.skills[2].trim() === '20% Skill Damage' || artist.skills[2].trim() === '30% Skill Damage'
-                                  ? 'skill-damage-20 bg-gradient-to-r from-emerald-400 to-green-600 shadow-sm'
-                                  : 'skill-good bg-gradient-to-r from-teal-400 to-cyan-600 shadow-sm'
-                                : 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40'
-                          }`}
+                          className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs shadow-sm transition-all duration-200 ${getSkillClass(artist.skills[2])}`}
                         >
                           {artist.skills[2]}
                         </span>
