@@ -253,7 +253,7 @@ function App() {
     if (trimmed.toLowerCase().includes('damage to player')) return 'damage-to-player bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg';
     if (trimmed === '60% Basic Attack Damage') return 'basic-attack-60 bg-gradient-to-r from-slate-600 to-slate-700 shadow-lg';
     if (trimmed === '50% Basic Attack Damage') return 'basic-attack-50 bg-gradient-to-r from-slate-700 to-slate-800 shadow-sm';
-    if (trimmed.includes('Gold Brick')) return 'bg-gradient-to-r from-slate-600 to-slate-700 text-orange-300 border border-slate-500/40';
+    if (trimmed.includes('Gold Brick')) return 'bg-orange-500 text-white border border-slate-500/40';
     if ([
       '180/DPS Attacking Group Center, Club, Landmark',
       '30% Damage World Building Guard',
