@@ -608,18 +608,18 @@ function App() {
               </span>
               <span className="text-white text-sm" style={{color: '#ffffff'}}>Terrible Skills (DPS variants, Drive Speed, etc.)</span>
             </div>
-            <div className="flex items-center gap-3">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700" style={{color: '#ffffff', fontWeight: '700'}}>
-                White&#9;
-              </span>
-              <span className="text-white text-sm font-bold" style={{color: '#ffffff'}}>All Other Skills</span>
-            </div>
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700 gold-text">
                   Orange&#9;
                 </span>
                 <span className="text-white text-sm font-bold legend-white">Gold Gathering Skill</span>
               </div>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700" style={{color: '#ffffff', fontWeight: '700'}}>
+                White&#9;
+              </span>
+              <span className="text-white text-sm font-bold" style={{color: '#ffffff'}}>All Other Skills</span>
+            </div>
           </div>
         </div>
       </main>
