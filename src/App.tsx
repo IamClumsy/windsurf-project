@@ -269,7 +269,7 @@ function App() {
     ].includes(trimmed)) {
       return trimmed === '20% Skill Damage' || trimmed === '30% Skill Damage'
         ? 'skill-damage-20 bg-gradient-to-r from-emerald-400 to-green-600 shadow-sm'
-        : 'skill-good bg-gradient-to-r from-teal-400 to-cyan-600 shadow-sm';
+        : 'bg-gradient-to-r from-slate-600 to-slate-700 text-blue-500 border border-slate-500/40 blue-text';
     }
     return 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40';
   };
