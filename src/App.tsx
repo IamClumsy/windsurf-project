@@ -134,6 +134,8 @@ function App() {
     const t = (skill || '').toLowerCase();
     // Exclude 60% basic attack damage (moved to BEST)
     if (t.includes('60%') && t.includes('basic attack damage')) return false;
+    // Exclude reduction skills (they get 3 points as Okay)
+    if (t.includes('reduc')) return false;
     return t.includes('skill damage') || t.includes('basic attack damage') || t.includes('basic damage');
   };
   const isTerribleSkill = (skill: string) => {
