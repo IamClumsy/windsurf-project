@@ -601,7 +601,13 @@ function App() {
               <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-slate-700 to-slate-800 skill-good">
                 Green&#9;
               </span>
-              <span className="text-white text-sm" style={{color: '#ffffff'}}>Good Skills (50% BA Damage, Skill Damage variants, Reductions)</span>
+              <span className="text-white text-sm" style={{color: '#ffffff'}}>Good Skills (50% BA Damage, Skill Damage variants)</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-slate-600 to-slate-700 blue-text">
+                Blue&#9;
+              </span>
+              <span className="text-white text-sm font-bold legend-white">Reduction Skills</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-slate-600 to-slate-700 skill-specific-terrible">
