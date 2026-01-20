@@ -754,5 +754,23 @@
     "thoughts": "Yes",
     "build": "",
     "photos": "Universal"
+  },
+    {
+    "id": 55,
+    "name": "Noora",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "R&B",
+    "skills": [
+      "10 sec/1800 Damage",
+      "50% Basic Attack Damage",
+      "40% Gold Brick Gathering Speed"
+    ],
+    "description": "Noora is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "",
+    "photos": "Universal"
   }
 ]
