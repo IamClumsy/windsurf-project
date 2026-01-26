@@ -31,6 +31,8 @@ function App() {
   const [selectedBuild, setSelectedBuild] = useState('');
   const [selectedRanking, setSelectedRanking] = useState('');
   const [selectedPhotos, setSelectedPhotos] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
 
   // Save artists to JSON file
   const saveArtists = async (updatedArtists: Artist[]) => {
@@ -276,6 +278,41 @@ function App() {
     }
     return 'bg-gradient-to-r from-slate-600 to-slate-700 text-slate-100 border border-slate-500/40';
   };
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === 'apexgirl') {
+      setIsAuthenticated(true);
+    } else {
+      alert('Incorrect password');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
+        <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
+          <h1 className="text-2xl font-bold mb-4 text-center">Enter Password</h1>
+          <form onSubmit={handlePasswordSubmit}>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 mb-4 bg-gray-700 text-white rounded"
+              placeholder="Password"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white p-2 rounded"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen bg-gray-900 text-white flex flex-col items-center">
