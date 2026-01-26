@@ -6,11 +6,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "50% Basic Attack Damage"],
     "description": "Kokoro is a talented Center from Tokyo48.",
     "rating": null,
     "thoughts": "Yes",
@@ -42,11 +38,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "50% Basic Attack Damage"],
     "description": "Alice is a talented Vocalist from Fantasy Vibes.",
     "rating": null,
     "thoughts": "Yes",
@@ -60,11 +52,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "15% Reduction Basic Attack Damage",
-      "20% Skill Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "15% Reduction Basic Attack Damage", "20% Skill Damage"],
     "description": "Cindy is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -78,11 +66,7 @@
     "rank": "SSR AH",
     "position": "Center",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "30% Skill Damage",
-      "30% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "30% Skill Damage", "30% Damage to Player"],
     "description": "Longkui is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -114,11 +98,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "10% Rally Fan Capacity",
-      "20% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "10% Rally Fan Capacity", "20% Damage to Player"],
     "description": "Sari is a talented Vocalist from Coral.",
     "rating": null,
     "thoughts": "Yes",
@@ -132,11 +112,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "10% Rally Fan Capacity",
-      "20% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "10% Rally Fan Capacity", "20% Damage to Player"],
     "description": "Natassaja is a talented Vocalist from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -150,11 +126,7 @@
     "rank": "SSR VIP",
     "position": "Dancer",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "10% Fan Capacity"],
     "description": "Caroline is a talented Dancer from Fantasy Vibes.",
     "rating": null,
     "thoughts": "No",
@@ -222,11 +194,7 @@
     "rank": "SSR VIP",
     "position": "Vocalist",
     "genre": "Hip Hop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "10% Fan Capacity"],
     "description": "Bella is a talented Vocalist from Luna.",
     "rating": null,
     "thoughts": "No",
@@ -240,11 +208,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Pop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "10% Rally Fan Capacity",
-      "20% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "10% Rally Fan Capacity", "20% Damage to Player"],
     "description": "Chizuru is a talented Center from Tokyo48.",
     "rating": null,
     "thoughts": "Yes",
@@ -258,11 +222,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Pop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "50% Basic Attack Damage",
-      "20% Skill Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "50% Basic Attack Damage", "20% Skill Damage"],
     "description": "Aurora is a talented Center from Sparkle Artists.",
     "rating": null,
     "thoughts": "Yes",
@@ -276,11 +236,7 @@
     "rank": "SSR",
     "position": "Dancer",
     "genre": "Pop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "180/DPS Attacking Enemy Company",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "180/DPS Attacking Enemy Company", "10% Fan Capacity"],
     "description": "Savannah is a talented Dancer from Echo.",
     "rating": null,
     "thoughts": "No",
@@ -312,11 +268,7 @@
     "rank": "SSR AH",
     "position": "Center",
     "genre": "Pop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "30% Damage to Player",
-      "30% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "30% Damage to Player", "30% Damage to Player"],
     "description": "Monica is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -348,11 +300,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "R&B",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Damage WG / 50% Drive Speed",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Damage WG / 50% Drive Speed", "50% Basic Attack Damage"],
     "description": "Zendaya is a talented Center from Radiance.",
     "rating": null,
     "thoughts": "No",
@@ -384,11 +332,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "R&B",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "75% Drive Speed"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "75% Drive Speed"],
     "description": "Julia is a talented Vocalist from Radiance.",
     "rating": null,
     "thoughts": "No",
@@ -402,11 +346,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "R&B",
-    "skills": [
-      "10 sec/1800 Damage",
-      "50% Basic Attack Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "50% Basic Attack Damage", "10% Fan Capacity"],
     "description": "Sora is a talented Vocalist from Tokyo48.",
     "rating": null,
     "thoughts": "No",
@@ -456,11 +396,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "50% Basic Attack Damage"],
     "description": "Claire is a talented Center from Sparkle Artists.",
     "rating": null,
     "thoughts": "Yes",
@@ -510,11 +446,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "30% Damage World Building Guard",
-      "20% Skill Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "30% Damage World Building Guard", "20% Skill Damage"],
     "description": "Skylar is a talented Vocalist from Neon.",
     "rating": null,
     "thoughts": "No",
@@ -528,11 +460,7 @@
     "rank": "SSR",
     "position": "Dancer",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "60% Basic Attack Damage",
-      "24% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "60% Basic Attack Damage", "24% Damage to Player"],
     "description": "Kasha is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -546,11 +474,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "50% Basic Attack Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "50% Basic Attack Damage", "10% Fan Capacity"],
     "description": "Talia is a talented Center from Coral.",
     "rating": null,
     "thoughts": "No",
@@ -564,11 +488,7 @@
     "rank": "SSR",
     "position": "Dancer",
     "genre": "Hip Hop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "50% Basic Attack Damage"],
     "description": "Leilani is a talented Dancer from Coral.",
     "rating": null,
     "thoughts": "Offensive Car",
@@ -582,11 +502,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Electronic",
-    "skills": [
-      "10 sec/1800 Damage",
-      "10% Rally Fan Capacity",
-      "20% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "10% Rally Fan Capacity", "20% Damage to Player"],
     "description": "Xenia is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -600,11 +516,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Hip Hop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "20% Skill Damage",
-      "50% Basic Attack Damage"
-    ],
+    "skills": ["10 sec/1800 Damage", "20% Skill Damage", "50% Basic Attack Damage"],
     "description": "Daphne is a talented Vocalist from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -618,11 +530,7 @@
     "rank": "SSR",
     "position": "Dancer",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "50% Basic Attack Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "50% Basic Attack Damage", "10% Fan Capacity"],
     "description": "Calliope is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -672,11 +580,7 @@
     "rank": "SSR",
     "position": "Dancer",
     "genre": "Hip Hop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "40% Gold Brick Gathering Speed",
-      "20% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "40% Gold Brick Gathering Speed", "20% Damage to Player"],
     "description": "Megan is a talented Dancer from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -690,11 +594,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Hip Hop",
-    "skills": [
-      "10 sec/1800 Damage",
-      "60% Basic Attack Damage",
-      "12% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "60% Basic Attack Damage", "12% Fan Capacity"],
     "description": "Haruki is a talented Center from Rina.",
     "rating": null,
     "thoughts": "Yes",
@@ -708,11 +608,7 @@
     "rank": "SSR",
     "position": "Center",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "50% Basic Attack Damage",
-      "10% Fan Capacity"
-    ],
+    "skills": ["10 sec/1800 Damage", "50% Basic Attack Damage", "10% Fan Capacity"],
     "description": "Mellissa is a talented Center from No Group.",
     "rating": null,
     "thoughts": "Yes",
@@ -726,11 +622,7 @@
     "rank": "SSR",
     "position": "Vocalist",
     "genre": "Rock",
-    "skills": [
-      "10 sec/1800 Damage",
-      "15% Reduction Basic Attack Damage",
-      "25% Damage to Player"
-    ],
+    "skills": ["10 sec/1800 Damage", "15% Reduction Basic Attack Damage", "25% Damage to Player"],
     "description": "Riku is a talented Vocalist from Rina.",
     "rating": null,
     "thoughts": "Yes",
@@ -755,7 +647,7 @@
     "build": "",
     "photos": "Universal"
   },
-    {
+  {
     "id": 55,
     "name": "Noora",
     "group": "None",
@@ -771,6 +663,60 @@
     "rating": null,
     "thoughts": "No",
     "build": "",
+    "photos": "Universal"
+  },
+  {
+    "id": 56,
+    "name": "Ningsih",
+    "group": "Breezara",
+    "rank": "SSR",
+    "position": "Dancer",
+    "genre": "Hip Hop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "240/DPS Attacking Enemy Company",
+      "12% Fan Capacity"
+    ],
+    "description": "Ningsih is a talented Dancer from Breezara.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "",
+    "photos": "Universal"
+  },
+  {
+    "id": 57,
+    "name": "Dewi",
+    "group": "Breezara",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "R&B",
+    "skills": [
+      "10 sec/1800 Damage",
+      "60% Basic Attack Damage",
+      "24% Skill Damage"
+    ],
+    "description": "Dewi is a talented Center from Breezara.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "",
+    "photos": "Universal"
+  },
+  {
+    "id": 58,
+    "name": "Lestari",
+    "group": "Breezara",
+    "rank": "SSR",
+    "position": "Vocalist",
+    "genre": "Pop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "240/DPS when defending HQ, GH, Club, LM",
+      "36% Damage to World Building Guard"
+    ],
+    "description": "Lestari is a talented Vocalist from Breezara.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "HQ Defense",
     "photos": "Universal"
   }
 ]
