@@ -638,7 +638,7 @@
     "genre": "Electronic",
     "skills": [
       "10 sec/1800 Damage",
-      "15% Reduction Basic Attack Damage",
+      "12% Reduction Basic Attack Damage",
       "60% Basic Attack Damage"
     ],
     "description": "Miyuki is a talented Dancer from Rina.",
@@ -718,5 +718,222 @@
     "thoughts": "No",
     "build": "HQ Defense",
     "photos": "Universal"
-  }
+  },
+  { 
+    "id": 59,
+    "name": "Aya",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "R&B",
+    "skills": [
+      "10 sec/1800 Damage",
+      "70% Basic Attack Damage",
+      "14% Fan Capacity"
+    ],
+    "description": "Aya is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 60,
+    "name": "Yumeno",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Vocalist",
+    "genre": "Pop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "28% Damage to Player",
+      "12% Reduction Basic Attack Damage"
+    ],
+    "description": "Yumeno is a talented Vocalist from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Damage Reduction",
+    "photos": "Universal"
+  },
+  {
+    "id": 61,
+    "name": "Mio",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Dancer",
+    "genre": "Hip Hop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "70% Basic Attack Damage",
+      "12% Reduction Basic Attack Damage"
+    ],
+    "description": "Mio is a talented Dancer from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Damage Reduction",
+    "photos": "Universal"
+  },
+  {
+    "id": 62,
+    "name": "Sienna",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Dancer",
+    "genre": "Rock",
+    "skills": [
+      "10 sec/1800 Damage",
+      "28% Damage to Player",
+      "12% Skill Damage Reduction"
+    ],
+    "description": "Sienna is a talented Dancer from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Damage Reduction",
+    "photos": "Universal"
+  },
+  {
+    "id": 63,
+    "name": "Margot",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Vocalist",
+    "genre": "Electronic",
+    "skills": [
+      "10 sec/1800 Damage",
+      "28% Skill Damage",
+      "14% Fan Capacity"
+    ],
+    "description": "Margot is a talented Vocalist from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 64,
+    "name": "Valentina",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Dancer",
+    "genre": "Pop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "14% Fan Capacity",
+      "12% Reduction Basic Attack Damage"
+    ],
+    "description": "Valentina is a talented Dancer from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 65,
+    "name": "Flora",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "Electronic",
+    "skills": [
+      "10 sec/1800 Damage",
+      "12% Fan Capacity",
+      "12% Reduction Basic Attack Damage"
+    ],
+    "description": "Flora is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 66,
+    "name": "Isla",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "Pop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "24% Damage to Player",
+      "12% Skill Damage Reduction"
+    ],
+    "description": "Isla is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "",
+    "photos": "Universal"
+  },
+  {
+    "id": 67,
+    "name": "Octavia",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "Pop",
+    "skills": [
+      "10 sec/1800 Damage",
+      "240/DPS Attacking Enemy Company",
+      "12% Fan Capacity"
+    ],
+    "description": "Octavia is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 68,
+    "name": "Hikari",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Center",
+    "genre": "Rock",
+    "skills": [
+      "10 sec/1800 Damage",
+      "24% Damage to Player",
+      "12% Skill Damage Reduction"
+    ],
+    "description": "Hikari is a talented Center from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Damage Reduction",
+    "photos": "Universal"
+  },
+  {
+    "id": 69,
+    "name": "Aurelia",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Vocalist",
+    "genre": "Electronic",
+    "skills": [
+      "10 sec/1800 Damage",
+      "24% Damage to Player",
+      "12% Fan Capacity"
+    ],
+    "description": "Aurelia is a talented Vocalist from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+  {
+    "id": 70,
+    "name": "Rin",
+    "group": "None",
+    "rank": "SSR",
+    "position": "Vocalist",
+    "genre": "Electronic",
+    "skills": [
+      "10 sec/1800 Damage",
+      "24% Skill Damage",
+      "12% Fan Capacity"
+    ],
+    "description": "Rin is a talented Vocalist from None.",
+    "rating": null,
+    "thoughts": "No",
+    "build": "Single Car",
+    "photos": "Universal"
+  },
+
 ]
